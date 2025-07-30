@@ -15,7 +15,7 @@ data_CIF_POW
     _dictionary.title             CIF_POW
     _dictionary.class             Instance
     _dictionary.version           2.5.0
-    _dictionary.date              2025-09-23
+    _dictionary.date              2025-12-01
     _dictionary.uri
 https://raw.githubusercontent.com/COMCIFS/Powder_Dictionary/master/cif_pow.dic
     _dictionary.ddl_conformance   4.2.0
@@ -2489,7 +2489,7 @@ save_
 save_pd_calib_d_to_tof.coeff
 
     _definition.id                '_pd_calib_d_to_tof.coeff'
-    _definition.update            2022-09-30
+    _definition.update            2025-08-01
     _description.text
 ;
     The value of the coefficient used in the equation to convert
@@ -2520,7 +2520,7 @@ save_pd_calib_d_to_tof.coeff
     else if (pc.power == -1) {
         _units.code = "angstroms_per_microsecond"
     }
-    else _units.code = UNKNOWN
+    else _units.code = "unspecified"
 ;
 
 save_
@@ -2528,7 +2528,7 @@ save_
 save_pd_calib_d_to_tof.coeff_su
 
     _definition.id                '_pd_calib_d_to_tof.coeff_su'
-    _definition.update            2023-07-11
+    _definition.update            2025-08-01
     _description.text
 ;
     Standard uncertainty of _pd_calib_d_to_tof.coeff.
@@ -2559,7 +2559,7 @@ save_pd_calib_d_to_tof.coeff_su
     else if (pc.power == -1) {
         _units.code = "angstroms_per_microsecond"
     }
-    else _units.code = UNKNOWN
+    else _units.code = "unspecified"
 ;
 
 save_
@@ -14442,7 +14442,7 @@ save_
 
        Deprecated _pd_refln.wavelength_id after consultation with PDDMG.
 ;
-         2.5.0                    2025-09-23
+         2.5.0                    2025-12-01
 ;
        ## Retain above version number and increment date until final
        ## release
