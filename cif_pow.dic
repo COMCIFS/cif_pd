@@ -14,7 +14,7 @@ data_CIF_POW
     _dictionary.title             CIF_POW
     _dictionary.class             Instance
     _dictionary.version           2.5.0
-    _dictionary.date              2025-07-15
+    _dictionary.date              2025-08-04
     _dictionary.uri
 https://raw.githubusercontent.com/COMCIFS/Powder_Dictionary/master/cif_pow.dic
     _dictionary.ddl_conformance   4.2.0
@@ -14374,6 +14374,24 @@ save_refln.wavelength_id
 
 save_
 
+save_structure.phase_id
+
+    _definition.id                '_structure.phase_id'
+    _definition.update            2025-08-04
+    _description.text
+;
+    A code which identifies the powder phase to which this structure relates.
+;
+    _name.category_id             structure
+    _name.object_id               phase_id
+    _name.linked_item_id          '_pd_phase.id'
+    _type.purpose                 Link
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Text
+
+save_
+
     loop_
       _dictionary_audit.version
       _dictionary_audit.date
@@ -14423,7 +14441,7 @@ save_
 
        Deprecated _pd_refln.wavelength_id after consultation with PDDMG.
 ;
-         2.5.0                    2025-07-15
+         2.5.0                    2025-08-04
 ;
        ## Retain above version number and increment date until final
        ## release
@@ -14663,4 +14681,6 @@ save_
        _pd_pref_orient.spherical_harmonics_texture_index as it isn't
        required to loop. Consolidated _pd_pref_orient_march_dollase.geom
        and _pd_pref_orient_spherical_harmonics.geom to _pd_pref_orient.geom.
+
+       Added _structure.phase_id.
 ;
