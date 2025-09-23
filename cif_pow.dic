@@ -14,7 +14,7 @@ data_CIF_POW
     _dictionary.title             CIF_POW
     _dictionary.class             Instance
     _dictionary.version           2.5.0
-    _dictionary.date              2025-09-17
+    _dictionary.date              2025-09-23
     _dictionary.uri
 https://raw.githubusercontent.com/COMCIFS/Powder_Dictionary/master/cif_pow.dic
     _dictionary.ddl_conformance   4.2.0
@@ -32,7 +32,7 @@ save_PD_GROUP
     _definition.id                PD_GROUP
     _definition.scope             Category
     _definition.class             Head
-    _definition.update            2025-09-17
+    _definition.update            2025-09-23
     _description.text
 ;
     Groups all of the categories of definitions in the powder
@@ -14441,7 +14441,7 @@ save_
 
        Deprecated _pd_refln.wavelength_id after consultation with PDDMG.
 ;
-         2.5.0                    2025-09-17
+         2.5.0                    2025-09-23
 ;
        ## Retain above version number and increment date until final
        ## release
