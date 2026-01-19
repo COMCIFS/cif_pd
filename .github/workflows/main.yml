@@ -1,37 +1,40 @@
-# Check that syntax is correct
+# Check the syntax, semantics and layout of DDLm dictionaries
 
-name: CIFSyntaxandStyleCheck
+name: CIF Syntax and Style Check
 
-# Controls when the action will run. Triggers the workflow on push or pull request
-# events but only for the master branch
+# Controls when the action will run. Triggers the workflow on push or pull
+# request events but only for the main branch
 on:
   push:
-    branches: [ master ]
+    branches:
+      - main
     paths-ignore:
-            - '.github/**'
+      - '.github/**'
 
   pull_request:
-    branches: [ master ]
+    branches:
+      - main
     paths-ignore:
-            - '.github/**'
+      - '.github/**'
+
   workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   syntax:
-    # The type of runner that the job will run on
+    name: Syntax
     runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-        - name: checkout
-          uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
       # Check syntax of all CIF files
-        - name: check_syntax
-          uses: COMCIFS/cif_syntax_check_action@master
-          id: cif_syntax_check
+      - name: Check CIF syntax
+        uses: COMCIFS/cif_syntax_check_action@master
+        id: cif_syntax_check
 
   semantics:
     name: Semantics
