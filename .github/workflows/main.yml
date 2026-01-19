@@ -83,6 +83,7 @@ jobs:
         id: ddlm_check
 
   layout:
+    name: Layout
     runs-on: ubuntu-latest
     needs: syntax
 
@@ -91,47 +92,74 @@ jobs:
         uses: actions/cache@v4
         id: cache
         with:
-                 path: ~/.julia
-                 key: ${{ runner.os }}-julia-v2
+          path: ~/.julia
+          key: ${{ runner.os }}-julia-v2
 
       - name: Install Julia
         uses: julia-actions/setup-julia@v1
         with:
-                version: '1.6'
+          version: '1.9'
 
       - name: Install Julia packages
         if: steps.cache.outputs.cache-hit != 'true'
         run: |
-               julia -e 'import Pkg;Pkg.add("CrystalInfoFramework");Pkg.add("Lerche");Pkg.add("FilePaths");Pkg.add("ArgParse")'
-      - name: checkout
-        uses: actions/checkout@v4
-        with:
-                path: main
-      - name: checkout julia tools
-        uses: actions/checkout@v4
-        with:
-                repository: jamesrhester/julia_cif_tools
-                path: julia_cif_tools
+          julia -e 'import Pkg;Pkg.add("CrystalInfoFramework");Pkg.add("Lerche");Pkg.add("ArgParse")'
 
-      - name: Checkout CIF master files
+      - name: Checkout
         uses: actions/checkout@v4
         with:
-                repository: COMCIFS/cif_core
-                path: cif_core
-      - name: Diagnostics
+          path: main
+
+      - name: Checkout julia tools
+        uses: actions/checkout@v4
+        with:
+          repository: jamesrhester/julia_cif_tools
+          path: julia_cif_tools
+
+      - name: Checkout the DDLm reference dictionary
+        uses: actions/checkout@v4
+        with:
+          repository: COMCIFS/DDLm
+          path: DDLm
+
+      - name: Checkout enumeration templates
+        uses: actions/checkout@v4
+        with:
+          repository: COMCIFS/Enumeration_Templates
+          path: enum
+
+      - name: Checkout attribute templates
+        uses: actions/checkout@v4
+        with:
+          repository: COMCIFS/Attribute_Templates
+          path: templ
+
+      - name: Checkout the coreCIF dictionary
+        uses: actions/checkout@v4
+        with:
+          repository: COMCIFS/cif_core
+          path: cif_core
+
+      - name: Move template files to the expected location
         run: |
-            ls -a
-            pwd
-            which julia
-      - name: one_dict_layout
+          mv enum/templ_enum.cif cif_core/templ_enum.cif
+          mv templ/templ_attr.cif cif_core/templ_attr.cif
+
+      - name: Run diagnostics
         run: |
-               julia -e 'using Pkg; Pkg.status()'
-               for file in main/*.dic
-               do
-                  echo "Checking $file"
-                  julia -O0 ./julia_cif_tools/linter.jl -i $PWD/cif_core $file cif_core/ddl.dic
-                  if [ $? != 0 ]
-                  then
-                    exit 1 ;
-                  fi
-               done
+          ls -a
+          pwd
+          which julia
+
+      - name: Run dictionary layout checks
+        run: |
+          julia -e 'using Pkg; Pkg.status()'
+          for file in main/*.dic
+          do
+            echo "Checking $file"
+            julia -O0 ./julia_cif_tools/linter.jl -i $PWD/cif_core $file cif_core/ddl.dic
+            if [ $? != 0 ]
+            then
+              exit 1 ;
+            fi
+          done
