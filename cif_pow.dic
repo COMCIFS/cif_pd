@@ -318,95 +318,270 @@ save_diffrn_radiation_wavelength.special_details
 
 save_
 
-save_PD_AMORPHOUS
+save_PD_AMORPHOUS_PEAK
 
-    _definition.id                PD_AMORPHOUS
+    _definition.id                PD_AMORPHOUS_PEAK
     _definition.scope             Category
     _definition.class             Loop
-    _definition.update            2023-01-08
+    _definition.update            2023-06-18
     _description.text
 ;
-    This section contains information about peaks in an amorphous phase
+    This category contains information about peaks in an amorphous phase
     extracted from the measured or, if present, the processed diffractogram.
-    Each peak in this table will have a unique label
-    (see _pd_amorphous.peak_id).
+    Each peak in will have a unique label (see _pd_amorphous.id).
+
+    In the context of this category, an "amorphous" phase is a phase which does
+    not have atomic coordinates. An amorphous phase may consist solely of peaks.
+    Additionally, it could have one or more unit cell parameters, it could have
+    a space group, it could have a unit cell mass. One or more of the peaks
+    could be associated with an indexed reflection.
 
     See PD_PEAK for details on the specific peak parameters that may be
-    recorded. Each amorphous peak may or may not be associated with an indexed
-    reflection, and as such, an "amorphous" phase could represent a material
-    with an unknown crystal structure. Amorphous peaks do not correspond to
-    background, and should not be used as such.
+    recorded. Amorphous peaks do not correspond to background, and should not
+    be used as such. For such an application, see PD_BACKGROUND.
+
+    To maintain complete generality, amorphous peak positions are given only in
+    terms of d spacing, and peak intensities as relative intensities. These are
+    then instantiated in a specific diffractogram by related data items in
+    PD_PEAK.
+
+    The intensities given in this category must only be correct relative to each
+    other. In the most correct case, the intensities will represent structure
+    factor amplitudes, but this is not necessary
 
     Note that peak positions are customarily determined from the processed
     diffractogram, and thus corrections for position and intensity will have
     been previously applied.
 ;
     _name.category_id             PD_GROUP
-    _name.object_id               PD_AMORPHOUS
+    _name.object_id               PD_AMORPHOUS_PEAK
 
     loop_
       _category_key.name
-         '_pd_amorphous.peak_id'
-         '_pd_amorphous.phase_id'
+         '_pd_amorphous_peak.id'
+         '_pd_amorphous_peak.phase_id'
+
+    _description_example.case
+;
+        _pd_phase.id   AMOR_PHASE
+
+        loop_
+        _pd_amorphous_peak.id
+        _pd_amorphous_peak.d_spacing
+        _pd_amorphous_peak.rel_intensity
+        _pd_amorphous_peak.peak_ids
+        _pd_amorphous_peak.diffractogram_ids
+        i     4.413   0.642   [ 1 a ]   [ DIFFRACTOGRAM_A DIFFRACTOGRAM_B ]
+        ii    2.792   0.648   [ 2 b ]   [ DIFFRACTOGRAM_A DIFFRACTOGRAM_B ]
+        iii   2.467   1       [ 3 c ]   [ DIFFRACTOGRAM_A DIFFRACTOGRAM_B ]
+;
+    _description_example.detail
+;
+        This amorphous phase consists of three peaks. This phase has been used
+        in two diffractograms, DIFFRACTOGRAM_A and DIFFRACTOGRAM_B. To find the
+        exact peak position, width and intensity details, you must find the
+        peaks indexed with the given peak id and diffractogram id combinations.
+;
 
 save_
 
-save_pd_amorphous.peak_id
+save_pd_amorphous_peak.d_spacing
 
-    _definition.id                '_pd_amorphous.peak_id'
-    _definition.update            2023-01-08
+    _definition.id                '_pd_amorphous_peak.d_spacing'
+    _definition.update            2023-06-18
     _description.text
 ;
-    An arbitrary code is assigned to each peak in an amorphous phase.
-
-    Used to link with _pd_peak.id. Each peak will have a unique code. In cases
-    where two peaks are severely overlapped, it may be desirable to list them as
-    a single peak.
-
-    A peak ID must be included for every amorphous peak.
+    Peak position as a d-spacing in angstroms.
 ;
-    _name.category_id             pd_amorphous
-    _name.object_id               peak_id
-    _name.linked_item_id          '_pd_peak.id'
-    _type.purpose                 Link
+    _name.category_id             pd_amorphous_peak
+    _name.object_id               d_spacing
+    _type.purpose                 Measurand
+    _type.source                  Derived
+    _type.container               Single
+    _type.contents                Real
+    _enumeration.range            0.0:
+    _units.code                   angstroms
+
+save_
+
+save_pd_amorphous_peak.d_spacing_su
+
+    _definition.id                '_pd_amorphous_peak.d_spacing_su'
+    _definition.update            2023-06-18
+    _description.text
+;
+    Standard uncertainty of _pd_amorphous_peak.d_spacing.
+;
+    _name.category_id             pd_amorphous_peak
+    _name.object_id               d_spacing_su
+    _name.linked_item_id          '_pd_amorphous_peak.d_spacing'
+    _units.code                   angstroms
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
+save_
+
+save_pd_amorphous_peak.diffractogram_ids
+
+    _definition.id                '_pd_amorphous_peak.diffractogram_ids'
+    _definition.update            2023-06-18
+    _description.text
+;
+    List of diffractogram id values (_pd_diffractogram.id) associated with this
+    amorphous peak.
+
+    Must be give in the same order as _pd_amorphous_peak.peak_ids.
+    That is, the n^th^ value in _pd_amorphous_peak.peak_ids and the n^th^ value
+    in _pd_amorphous_peak.diffractogram_ids must correctly identify the peak
+    associated with this amorphous peak.
+;
+    _name.category_id             pd_amorphous_peak
+    _name.object_id               diffractogram_ids
+    _type.purpose                 Encode
+    _type.source                  Assigned
+    _type.container               List
+    _type.dimension               '[]'
+    _type.contents                Text
+
+save_
+
+save_pd_amorphous_peak.id
+
+    _definition.id                '_pd_amorphous_peak.id'
+    _definition.update            2023-06-18
+    _description.text
+;
+    An arbitrary code to identify each peak in an amorphous phase.
+;
+    _name.category_id             pd_amorphous_peak
+    _name.object_id               id
+    _type.purpose                 Key
     _type.source                  Assigned
     _type.container               Single
     _type.contents                Code
 
 save_
 
-save_pd_amorphous.peak_overall_id
+save_pd_amorphous_peak.intensity
 
-    _definition.id                '_pd_amorphous.peak_overall_id'
-    _definition.update            2023-04-13
+    _definition.id                '_pd_amorphous_peak.intensity'
+    _definition.update            2023-06-18
     _description.text
 ;
-    A code linking to general information about peak description and
-    determination for the amorphous phase peaks.
+    Relative integrated area for the peak. This value must be obeyed by any
+    peaks used in a diffractogram which are assigned to peaks in this phase.
+
+    This value, when properly calibrated, will represent a structure factor
+    amplitude, but this is not necessary. It is necessary that the value given
+    here must be such that it must be scaled by Lorentz-Polarisation, and other
+    such scaling factors, in order to be applied to a diffractogram.
+
+    It is good practice to include SUs for these values.
 ;
-    _name.category_id             pd_amorphous
-    _name.object_id               peak_overall_id
-    _name.linked_item_id          '_pd_peak_overall.id'
-    _type.purpose                 Link
-    _type.source                  Assigned
+    _name.category_id             pd_amorphous_peak
+    _name.object_id               intensity
+    _type.purpose                 Measurand
+    _type.source                  Derived
     _type.container               Single
+    _type.contents                Real
+    _enumeration.range            0.0:
+    _units.code                   none
+
+save_
+
+save_pd_amorphous_peak.intensity_su
+
+    _definition.id                '_pd_amorphous_peak.intensity_su'
+    _definition.update            2023-06-18
+    _description.text
+;
+    Standard uncertainty of _pd_amorphous_peak.intensity.
+;
+    _name.category_id             pd_amorphous_peak
+    _name.object_id               intensity_su
+    _name.linked_item_id          '_pd_amorphous_peak.intensity'
+    _units.code                   none
+
+    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+
+save_
+
+save_pd_amorphous_peak.peak_ids
+
+    _definition.id                '_pd_amorphous_peak.peak_ids'
+    _definition.update            2023-06-18
+    _description.text
+;
+    List of peak id values (_pd_peak.id) associated with this amorphous peak.
+
+    Must be give in the same order as _pd_amorphous_peak.diffractogram_ids.
+    That is, the n^th^ value in _pd_amorphous_peak.peak_ids and the n^th^ value
+    in _pd_amorphous_peak.diffractogram_ids must correctly identify the peak
+    associated with this amorphous peak.
+;
+    _name.category_id             pd_amorphous_peak
+    _name.object_id               peak_ids
+    _type.purpose                 Encode
+    _type.source                  Assigned
+    _type.container               List
+    _type.dimension               '[]'
     _type.contents                Code
 
 save_
 
-save_pd_amorphous.phase_id
+save_pd_amorphous_peak.peak_overall_ids
 
-    _definition.id                '_pd_amorphous.phase_id'
-    _definition.update            2023-01-08
+    _definition.id                '_pd_amorphous_peak.peak_overall_ids'
+    _definition.update            2023-06-18
+    _description.text
+;
+    List of peak_overall id values (_pd_peak_overall.id) associated with this
+    amorphous peak.
+
+    Must be give in the same order as _pd_amorphous_peak.peak_ids.
+;
+    _name.category_id             pd_amorphous_peak
+    _name.object_id               peak_overall_ids
+    _type.purpose                 Encode
+    _type.source                  Assigned
+    _type.container               List
+    _type.dimension               '[]'
+    _type.contents                ByReference
+    _type.contents_referenced_id  '_pd_peak_overall.id'
+
+save_
+
+save_pd_amorphous_peak.phase_id
+
+    _definition.id                '_pd_amorphous_peak.phase_id'
+    _definition.update            2023-06-18
     _description.text
 ;
     The phase (see _pd_phase.id) to which the amorphous peak relates.
 ;
-    _name.category_id             pd_amorphous
+    _name.category_id             pd_amorphous_peak
     _name.object_id               phase_id
     _name.linked_item_id          '_pd_phase.id'
     _type.purpose                 Link
     _type.source                  Related
+    _type.container               Single
+    _type.contents                Text
+
+save_
+
+save_pd_amorphous_peak.special_details
+
+    _definition.id                '_pd_amorphous_peak.special_details'
+    _definition.update            2023-06-18
+    _description.text
+;
+    Description of amorphous peak details that cannot otherwise be recorded
+    using other PD_AMORPHOUS data items.
+;
+    _name.category_id             pd_amorphous_peak
+    _name.object_id               special_details
+    _type.purpose                 Describe
+    _type.source                  Recorded
     _type.container               Single
     _type.contents                Text
 
@@ -14494,8 +14669,6 @@ save_
        Update definitions of _pd_phase.name, _pd_qpa_ext_std.phase_name, and
        _pd_qpa_int_std.phase_name to better represent their contents.
 
-       Created PD_AMORPHOUS.
-
        Deprecate _pd_calib.std_internal_mass_percent and
        _pd_calib.std_internal_mass_percent_su.
 
@@ -14571,6 +14744,8 @@ save_
 
        Converted all 'Array' and 'Matrix'-type data items to be 'List', except
        _pd_pref_orient_march_dollase.hkl.
+
+       Created PD_AMORPHOUS_PEAK.
 
        Change units of _pd_calib_incident_intensity.incident_* to
        counts_per_second and per_second.
