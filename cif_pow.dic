@@ -15,10 +15,11 @@ data_CIF_POW
     _dictionary.title             CIF_POW
     _dictionary.class             Instance
     _dictionary.version           2.5.0
-    _dictionary.date              2025-12-10
+    _dictionary.date              2026-03-02
     _dictionary.uri
 https://raw.githubusercontent.com/COMCIFS/Powder_Dictionary/master/cif_pow.dic
     _dictionary.ddl_conformance   4.2.0
+    _dictionary.licensing_SPDX    CC-BY-4.0
     _dictionary.namespace         CifPow
     _description.text
 ;
@@ -14442,7 +14443,7 @@ save_
 
        Deprecated _pd_refln.wavelength_id after consultation with PDDMG.
 ;
-         2.5.0                    2025-12-10
+         2.5.0                    2026-03-02
 ;
        ## Retain above version number and increment date until final
        ## release
@@ -14687,4 +14688,6 @@ save_
 
        Fixed imgCIF import head category name. Corrected types of
        links to _diffrn_scan.id and _diffrn_detector.id.
+
+       Added the _dictionary.licensing_SPDX dictionary attribute.
 ;
