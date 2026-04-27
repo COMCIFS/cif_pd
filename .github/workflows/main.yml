@@ -91,7 +91,7 @@ jobs:
     needs: syntax
 
     env:
-        JULIA_VERSION: '1.9'
+        JULIA_VERSION: '1.10'
         JULIA_DEP_FILE: 'julia_cif_tools/Project.toml'
 
     steps:
