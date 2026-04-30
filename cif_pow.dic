@@ -15,7 +15,7 @@ data_CIF_POW
     _dictionary.title             CIF_POW
     _dictionary.class             Instance
     _dictionary.version           2.5.0
-    _dictionary.date              2026-04-27
+    _dictionary.date              2026-04-30
     _dictionary.uri
 https://raw.githubusercontent.com/COMCIFS/Powder_Dictionary/master/cif_pow.dic
     _dictionary.ddl_conformance   4.2.0
@@ -7129,7 +7129,7 @@ save_pd_instr.beam_size_ax
 
     _definition.id                '_pd_instr.beam_size_ax'
     _alias.definition_id          '_pd_instr_beam_size_ax'
-    _definition.update            2014-06-20
+    _definition.update            2026-04-30
     _description.text
 ;
     Axial dimension of the radiation beam
@@ -7138,7 +7138,7 @@ save_pd_instr.beam_size_ax
     and scattered beam is the axial (*_ax) direction.
 ;
     _name.category_id             pd_instr
-    _name.object_id               size_ax
+    _name.object_id               beam_size_ax
     _type.purpose                 Number
     _type.source                  Recorded
     _type.container               Single
@@ -7152,7 +7152,7 @@ save_pd_instr.beam_size_eq
 
     _definition.id                '_pd_instr.beam_size_eq'
     _alias.definition_id          '_pd_instr_beam_size_eq'
-    _definition.update            2014-06-20
+    _definition.update            2026-04-30
     _description.text
 ;
     Equatorial dimensions of the radiation beam
@@ -7160,7 +7160,7 @@ save_pd_instr.beam_size_eq
     The equatorial dimension is in the plane of scattering.
 ;
     _name.category_id             pd_instr
-    _name.object_id               size_eq
+    _name.object_id               beam_size_eq
     _type.purpose                 Number
     _type.source                  Recorded
     _type.container               Single
@@ -14443,7 +14443,7 @@ save_
 
        Deprecated _pd_refln.wavelength_id after consultation with PDDMG.
 ;
-         2.5.0                    2026-04-27
+         2.5.0                    2026-04-30
 ;
        ## Retain above version number and increment date until final
        ## release
@@ -14690,4 +14690,7 @@ save_
        links to _diffrn_scan.id and _diffrn_detector.id.
 
        Added the _dictionary.licensing_SPDX dictionary attribute.
+
+       Changed the _name.object_id attribute of _pd_instr.beam_size_ax and
+       _pd_instr.beam_size_eq.
 ;
