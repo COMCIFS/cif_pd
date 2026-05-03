@@ -11844,8 +11844,8 @@ save_PD_PROC_LS
          _pd_diffractogram.id   PATTERN_42
 
          _pd_proc_ls.peak_cutoff        0.0001
-         _pd_proc_ls.prof_wr_expected   0.12324
-         _pd_proc_ls.prof_wr_factor     0.15432
+         _pd_proc_ls.prof_wR_expected   0.12324
+         _pd_proc_ls.prof_wR_factor     0.15432
          _pd_proc_ls.profile_function   'Fundamental parameters'
 ;
 ;
@@ -11858,8 +11858,8 @@ save_PD_PROC_LS
 ;
          _pd_proc_ls.diffractogram_id   cae4f697-ae84-4e3f-a0c1-4569d60b6191
          _pd_proc_ls.peak_cutoff        0.005
-         _pd_proc_ls.prof_wr_expected   0.0273
-         _pd_proc_ls.prof_wr_factor     0.0569
+         _pd_proc_ls.prof_wR_expected   0.0273
+         _pd_proc_ls.prof_wR_factor     0.0569
          _pd_proc_ls.profile_function
        ;
          The profiles were calculated using the modified Thompson-Cox-Hastings
@@ -12836,7 +12836,7 @@ save_pd_qpa_calib_factor.rir
     given phase which allows quantitative phase analysis to be undertaken.
 
     This ratio must NOT have been calculated with respect to corundum; for RIR
-    values calculated with corundum, please use _pd_qpa_calib_factor.I_over_IC.
+    values calculated with corundum, please use _pd_qpa_calib_factor.I_over_Ic.
 
     Details of the reference material against which this RIR was determined
     should be given in _pd_qpa_calib_factor.special_details.
@@ -13728,7 +13728,7 @@ save_pd_qpa_overall.method
 
          If any phase in an analysis of a diffractogram uses the PONKCS
          approach, the entire quantification is to be marked as 'PONKCS', and
-         all phases should define _pd_qpa_calib_factor.ponkcs.
+         all phases should define _pd_qpa_calib_factor.PONKCS.
 
          The values utilised for I~p~ and C~p~ can be recorded using
          _pd_qpa_intensity_factor.value and _pd_qpa_calib_factor.PONKCS,
