@@ -15,7 +15,7 @@ data_CIF_POW
     _dictionary.title             CIF_POW
     _dictionary.class             Instance
     _dictionary.version           2.5.0
-    _dictionary.date              2026-06-08
+    _dictionary.date              2026-05-18
     _dictionary.uri
 https://raw.githubusercontent.com/COMCIFS/Powder_Dictionary/master/cif_pow.dic
     _dictionary.ddl_conformance   4.2.0
@@ -1734,7 +1734,7 @@ save_PD_BLOCK
     _definition.class             Loop
     _definition_replaced.id       1
     _definition_replaced.by       .
-    _definition.update            2026-06-08
+    _definition.update            2026-05-18
     _description.text
 ;
     **DEPRECATED**
@@ -1874,7 +1874,7 @@ save_PD_BLOCK_DIFFRACTOGRAM
     _definition.class             Loop
     _definition_replaced.id       1
     _definition_replaced.by       .
-    _definition.update            2026-06-08
+    _definition.update            2026-05-18
     _description.text
 ;
      **DEPRECATED**
@@ -2247,7 +2247,7 @@ save_PD_CALIB
     _definition.class             Loop
     _definition_replaced.id       1
     _definition_replaced.by       .
-    _definition.update            2026-06-08
+    _definition.update            2026-05-18
     _description.text
 ;
     This category is deprecated. Please see PD_CALIB_DETECTED_INTENSITY and
@@ -3079,7 +3079,7 @@ save_PD_CALIB_OFFSET
     _definition.class             Loop
     _definition_replaced.id       1
     _definition_replaced.by       .
-    _definition.update            2026-06-08
+    _definition.update            2026-05-18
     _description.text
 ;
     This category is deprecated. Please see PD_CALIB_XCOORD and
@@ -3307,7 +3307,7 @@ save_PD_CALIB_STD
     _definition.class             Loop
     _definition_replaced.id       1
     _definition_replaced.by       .
-    _definition.update            2026-06-08
+    _definition.update            2026-05-18
     _description.text
 ;
     This category is deprecated. Please see PD_CALIB_DETECTED_INTENSITY,
@@ -8818,7 +8818,7 @@ save_PD_MEAS_INFO_AUTHOR
     _definition.class             Loop
     _definition_replaced.id       1
     _definition_replaced.by       .
-    _definition.update            2026-06-08
+    _definition.update            2026-05-18
     _description.text
 ;
     This category is deprecated. Please see AUDIT_AUTHOR and AUDIT_AUTHOR_ROLE.
@@ -10292,7 +10292,7 @@ save_PD_PHASE_BLOCK
     _definition.class             Loop
     _definition_replaced.id       1
     _definition_replaced.by       .
-    _definition.update            2026-06-08
+    _definition.update            2026-05-18
     _description.text
 ;
     **DEPRECATED**
@@ -11659,7 +11659,7 @@ save_PD_PROC_INFO_AUTHOR
     _definition.class             Loop
     _definition_replaced.id       1
     _definition_replaced.by       .
-    _definition.update            2026-06-08
+    _definition.update            2026-05-18
     _description.text
 ;
     This category is deprecated. Please see AUDIT_AUTHOR and AUDIT_AUTHOR_ROLE.
@@ -14459,7 +14459,7 @@ save_
 
        Deprecated _pd_refln.wavelength_id after consultation with PDDMG.
 ;
-         2.5.0                    2026-06-08
+         2.5.0                    2026-05-18
 ;
        ## Retain above version number and increment date until final
        ## release
