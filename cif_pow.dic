@@ -12558,6 +12558,9 @@ save_pd_proc_overall.lambda_k
 ;
     Arbitrary constant wavelength used in the calculation of
     d-spacing perpendicular - see _pd_proc.d_spacing_perpendicular.
+
+    The constant can be understood as an aspect ratio of 
+    _pd_proc.d_spacing and _pd_proc.d_spacing_perpendicular.
 ;
     _name.category_id             pd_proc_overall
     _name.object_id               lambda_k
