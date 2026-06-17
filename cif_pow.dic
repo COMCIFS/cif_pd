@@ -324,7 +324,7 @@ save_PD_AMORPHOUS
     _definition.id                PD_AMORPHOUS
     _definition.scope             Category
     _definition.class             Loop
-    _definition.update            2023-01-08
+    _definition.update            2026-05-18
     _description.text
 ;
     This section contains information about peaks in an amorphous phase
@@ -334,9 +334,9 @@ save_PD_AMORPHOUS
 
     See PD_PEAK for details on the specific peak parameters that may be
     recorded. Each amorphous peak may or may not be associated with an indexed
-    reflection, and as such, an "amorphous" phase could represent a material
-    with an unknown crystal structure. Amorphous peaks do not correspond to
-    background, and should not be used as such.
+    reflection, and as such, an "amorphous" phase, or phases, could represent
+    a material with an unknown crystal structure. Amorphous peaks do not
+    correspond to background, and should not be used as such.
 
     Note that peak positions are customarily determined from the processed
     diffractogram, and thus corrections for position and intensity will have
@@ -348,7 +348,52 @@ save_PD_AMORPHOUS
     loop_
       _category_key.name
          '_pd_amorphous.peak_id'
-         '_pd_amorphous.phase_id'
+         '_pd_amorphous.diffractogram_id'
+
+    _description_example.case
+;
+         data_block_1
+           _pd_diffractogram.id   A_HISTOGRAM
+
+           loop_
+           _pd_peak.id
+           _pd_peak.d_spacing
+           _pd_peak.pk_height
+           _pd_peak.width_2theta
+           a  4.31    2  3.2
+           b  4.25   17  0.193
+           c  3.34  101  0.198
+           d  3.11    4  4.7
+
+           loop_
+           _pd_amorphous.peak_id
+           a d
+;
+    _description_example.detail
+;
+         In the diffraction pattern identified by `A_HISTOGRAM`,
+         there are four peaks with the given details. Two
+         peaks are marked as amorphous. The remaining peaks
+         would be assigned elsewhere to other crystalline phases.
+;
+
+save_
+
+save_pd_amorphous.diffractogram_id
+
+    _definition.id                '_pd_amorphous.diffractogram_id'
+    _definition.update            2026-05-18
+    _description.text
+;
+    A diffractogram id to which the amorphous peaks relates.
+;
+    _name.category_id             pd_amorphous
+    _name.object_id               diffractogram_id
+    _name.linked_item_id          '_pd_diffractogram.id'
+    _type.purpose                 Link
+    _type.source                  Related
+    _type.container               Single
+    _type.contents                Text
 
 save_
 
@@ -392,24 +437,6 @@ save_pd_amorphous.peak_overall_id
     _type.source                  Assigned
     _type.container               Single
     _type.contents                Code
-
-save_
-
-save_pd_amorphous.phase_id
-
-    _definition.id                '_pd_amorphous.phase_id'
-    _definition.update            2023-01-08
-    _description.text
-;
-    The phase (see _pd_phase.id) to which the amorphous peak relates.
-;
-    _name.category_id             pd_amorphous
-    _name.object_id               phase_id
-    _name.linked_item_id          '_pd_phase.id'
-    _type.purpose                 Link
-    _type.source                  Related
-    _type.container               Single
-    _type.contents                Text
 
 save_
 
