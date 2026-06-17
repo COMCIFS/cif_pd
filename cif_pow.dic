@@ -6197,14 +6197,20 @@ save_pd_proc.d_spacing_perpendicular
 ;
     d-spacing perpendicular, when combined with d-spacing, allows for a
     two-dimensional treatment of neutron TOF powder data, taking into
-    account the variation of the diffraction angle, θ, and wavelength, λ.
+    account the variation of the diffraction angle, 2θ, and wavelength, λ.
 
     The values are given by
 
     d~⟂~ = sqrt(λ² - 2 λₖ² ln(cosθ))  (Å)
 
     where λ is the wavelength in ångstroms, θ is the Bragg angle, and λₖ is
-    an arbitrary constant, see _pd_proc_overall.lambda_k
+    an arbitrary constant, see _pd_proc_overall.lambda_k.
+
+    The formula for d~⟂~ is a solution to the differential equation
+    demanding an orthogonal axis to d-spacing in the (2θ,λ) plane.
+    Any (2θ,λ)-coordinate can be transformed to a (d,d~⟂~)-coordinate, 
+    with the effect that sinusoidal Bragg-reflections become vertical 
+    with minimal peak width in the orthogonal d~⟂~-direction.
 
     See:
     Philipp Jacobs et al. (2015). J. Appl. Cryst. 48, 1627-1636.
@@ -12560,6 +12566,7 @@ save_pd_proc_overall.lambda_k
     _type.container               Single
     _type.contents                Real
     _enumeration.range            0.0:
+    _enumeration.default          1.0
     _units.code                   angstroms
 
 save_
