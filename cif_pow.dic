@@ -12569,8 +12569,12 @@ save_pd_proc_overall.lambda_k
     _type.container               Single
     _type.contents                Real
     _enumeration.range            0.0:
-    _enumeration.default          1.0
     _units.code                   angstroms
+    _method.purpose               Definition
+    _method.expression
+;
+    _enumeration.default = 1.0
+;
 
 save_
 
