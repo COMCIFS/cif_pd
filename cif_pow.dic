@@ -6231,7 +6231,7 @@ save_pd_proc.d_spacing_perpendicular
     d~⟂~ = sqrt(λ² - 2 λₖ² ln(cosθ))  (Å)
 
     where λ is the wavelength in ångstroms, θ is the Bragg angle, and λₖ is
-    an arbitrary constant, see _pd_proc_overall.lambda_k.
+    an arbitrary constant, taken to have a value of 1 Å.
 
     The formula for d~⟂~ is a solution to the differential equation
     demanding an orthogonal axis to d-spacing in the (2θ,λ) plane.
@@ -12577,34 +12577,6 @@ save_pd_proc_overall.diffractogram_id
 
 save_
 
-save_pd_proc_overall.lambda_k
-
-    _definition.id                '_pd_proc_overall.lambda_k'
-    _definition.update            2026-06-11
-    _description.text
-;
-    Arbitrary constant wavelength used in the calculation of
-    d-spacing perpendicular - see _pd_proc.d_spacing_perpendicular.
-
-    The constant can be understood as an aspect ratio of
-    _pd_proc.d_spacing and _pd_proc.d_spacing_perpendicular.
-;
-    _name.category_id             pd_proc_overall
-    _name.object_id               lambda_k
-    _type.purpose                 Number
-    _type.source                  Derived
-    _type.container               Single
-    _type.contents                Real
-    _enumeration.range            0.0:
-    _units.code                   angstroms
-    _method.purpose               Definition
-    _method.expression
-;
-    _enumeration.default = 1.0
-;
-
-save_
-
 save_PD_QPA_CALIB_FACTOR
 
     _definition.id                PD_QPA_CALIB_FACTOR
@@ -14830,5 +14802,5 @@ save_
        Added _refln.structure_id as key to REFLN to maintain compatibilty with
        MULTIBLOCK_CORE.
 
-       Added _pd_proc.d_spacing_perpendicular and _pd_proc_overall.lambda_k.
+       Added _pd_proc.d_spacing_perpendicular.
 ;
