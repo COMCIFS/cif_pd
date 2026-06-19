@@ -10,9 +10,9 @@
 #                                                                            #
 ##############################################################################
 
-data_CIF_POW
+data_CIF_PD
 
-    _dictionary.title             CIF_POW
+    _dictionary.title             CIF_PD
     _dictionary.class             Instance
     _dictionary.version           2.5.0
     _dictionary.date              2026-06-18
@@ -20,10 +20,10 @@ data_CIF_POW
 https://raw.githubusercontent.com/COMCIFS/Powder_Dictionary/master/cif_pow.dic
     _dictionary.ddl_conformance   4.2.0
     _dictionary.licensing_SPDX    CC-BY-4.0
-    _dictionary.namespace         CifPow
+    _dictionary.namespace         CifCore
     _description.text
 ;
-    The CIF_POW dictionary records the definitions of data items needed in
+    The CIF_PD dictionary records the definitions of data items needed in
     powder diffraction studies. Note that unlike most IUCr CIF
     dictionaries, the data name is not always constructed as
     <category>.<object>.
@@ -40,7 +40,7 @@ save_PD_GROUP
     Groups all of the categories of definitions in the powder
     diffraction study of materials.
 ;
-    _name.category_id             CIF_POW
+    _name.category_id             CIF_PD
     _name.object_id               PD_GROUP
 
     _import.get
