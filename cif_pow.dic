@@ -15,7 +15,7 @@ data_CIF_PD
     _dictionary.title             CIF_PD
     _dictionary.class             Instance
     _dictionary.version           2.5.0
-    _dictionary.date              2026-06-18
+    _dictionary.date              2026-06-19
     _dictionary.uri
 https://raw.githubusercontent.com/COMCIFS/Powder_Dictionary/master/cif_pow.dic
     _dictionary.ddl_conformance   4.2.0
@@ -29,19 +29,19 @@ https://raw.githubusercontent.com/COMCIFS/Powder_Dictionary/master/cif_pow.dic
     <category>.<object>.
 ;
 
-save_PD_GROUP
+save_CIF_PD_HEAD
 
-    _definition.id                PD_GROUP
+    _definition.id                CIF_PD_HEAD
     _definition.scope             Category
     _definition.class             Head
-    _definition.update            2026-06-18
+    _definition.update            2026-06-19
     _description.text
 ;
     Groups all of the categories of definitions in the powder
     diffraction study of materials.
 ;
     _name.category_id             CIF_PD
-    _name.object_id               PD_GROUP
+    _name.object_id               CIF_PD_HEAD
 
     _import.get
         [
@@ -342,7 +342,7 @@ save_PD_AMORPHOUS
     diffractogram, and thus corrections for position and intensity will have
     been previously applied.
 ;
-    _name.category_id             PD_GROUP
+    _name.category_id             CIF_PD_HEAD
     _name.object_id               PD_AMORPHOUS
 
     loop_
@@ -465,7 +465,7 @@ save_PD_BACKGROUND
     If more than one type of background is specified for a particular
     diffractogram, then it is assumed they are linearly additive.
 ;
-    _name.category_id             PD_GROUP
+    _name.category_id             CIF_PD_HEAD
     _name.object_id               PD_BACKGROUND
 
     loop_
@@ -1793,7 +1793,7 @@ save_PD_BLOCK
     laboratory to create a catalogue of block IDs if that site
     wishes to resolve these references.
 ;
-    _name.category_id             PD_GROUP
+    _name.category_id             CIF_PD_HEAD
     _name.object_id               PD_BLOCK
     _category_key.name            '_pd_block.id'
 
@@ -1912,7 +1912,7 @@ save_PD_BLOCK_DIFFRACTOGRAM
     The _pd_block.id values of those diffractograms should
     be listed here.
 ;
-    _name.category_id             PD_GROUP
+    _name.category_id             CIF_PD_HEAD
     _name.object_id               PD_BLOCK_DIFFRACTOGRAM
     _category_key.name            '_pd_block_diffractogram.id'
 
@@ -1961,7 +1961,7 @@ save_PD_CALC_COMPONENT
     components of a computed diffractogram, such as
     intensities calculated from a Rietveld refinement.
 ;
-    _name.category_id             PD_GROUP
+    _name.category_id             CIF_PD_HEAD
     _name.object_id               PD_CALC_COMPONENT
 
     loop_
@@ -2153,7 +2153,7 @@ save_PD_CALC_OVERALL
     Items in this category record overall features of the computed
     diffractogram.
 ;
-    _name.category_id             PD_GROUP
+    _name.category_id             CIF_PD_HEAD
     _name.object_id               PD_CALC_OVERALL
     _category_key.name            '_pd_calc_overall.diffractogram_id'
     _description_example.case
@@ -2288,7 +2288,7 @@ save_PD_CALIB
     unchanged. Loops may be used for calibration information that
     differs by detector channel.
 ;
-    _name.category_id             PD_GROUP
+    _name.category_id             CIF_PD_HEAD
     _name.object_id               PD_CALIB
     _category_key.name            '_pd_calib.detector_id'
 
@@ -2473,7 +2473,7 @@ save_PD_CALIB_D_TO_TOF
     A loop is used to specify all terms of the correction
     per histogram.
 ;
-    _name.category_id             PD_GROUP
+    _name.category_id             CIF_PD_HEAD
     _name.object_id               PD_CALIB_D_TO_TOF
 
     loop_
@@ -2682,7 +2682,7 @@ save_PD_CALIB_DETECTED_INTENSITY
     the measurement of a diffractogram, see _pd_meas.intensity_monitor and
     _pd_meas.counts_monitor.
 ;
-    _name.category_id             PD_GROUP
+    _name.category_id             CIF_PD_HEAD
     _name.object_id               PD_CALIB_DETECTED_INTENSITY
     _category_key.name            '_pd_calib_detected_intensity.detector_id'
 
@@ -2895,7 +2895,7 @@ save_PD_CALIB_INCIDENT_INTENSITY
     diffractograms on a common scale. Note that this is only an indicative
     example.
 ;
-    _name.category_id             PD_GROUP
+    _name.category_id             CIF_PD_HEAD
     _name.object_id               PD_CALIB_INCIDENT_INTENSITY
     _category_key.name            '_pd_calib_incident_intensity.instr_id'
 
@@ -3126,7 +3126,7 @@ save_PD_CALIB_OFFSET
     range where the offset is applicable can be specified using
     _pd_calib.2theta_off_min and _pd_calib.2theta_off_max.
 ;
-    _name.category_id             PD_GROUP
+    _name.category_id             CIF_PD_HEAD
     _name.object_id               PD_CALIB_OFFSET
 
     loop_
@@ -3353,7 +3353,7 @@ save_PD_CALIB_STD
     For quantitative phase analysis by the external standard approach,
     please see PD_QPA_EXTERNAL_STD.
 ;
-    _name.category_id             PD_GROUP
+    _name.category_id             CIF_PD_HEAD
     _name.object_id               PD_CALIB_STD
 
     loop_
@@ -3513,7 +3513,7 @@ save_PD_CALIB_XCOORD
 
     See also PD_CALIB_XCOORD_OVERALL.
 ;
-    _name.category_id             PD_GROUP
+    _name.category_id             CIF_PD_HEAD
     _name.object_id               PD_CALIB_XCOORD
 
     loop_
@@ -4269,7 +4269,7 @@ save_PD_CALIB_XCOORD_OVERALL
 
     See PD_CALIB_XCOORD.
 ;
-    _name.category_id             PD_GROUP
+    _name.category_id             CIF_PD_HEAD
     _name.object_id               PD_CALIB_XCOORD_OVERALL
     _category_key.name            '_pd_calib_xcoord_overall.id'
 
@@ -4396,7 +4396,7 @@ save_PD_CALIBRATION
 
     For a machine-readable implementation, please see PD_CALIB_XCOORD.
 ;
-    _name.category_id             PD_GROUP
+    _name.category_id             CIF_PD_HEAD
     _name.object_id               PD_CALIBRATION
     _category_key.name            '_pd_calibration.id'
     _description_example.case
@@ -4551,7 +4551,7 @@ save_PD_CHAR
     specimen is the material taken from the bottle and placed in the instrument.
 
 ;
-    _name.category_id             PD_GROUP
+    _name.category_id             CIF_PD_HEAD
     _name.object_id               PD_CHAR
     _category_key.name            '_pd_char.id'
     _description_example.case
@@ -4857,7 +4857,7 @@ save_PD_DATA
     or PD_PROC. Higher dimensional data must first be reduced in some
     manner before it can be assigned to data names in PD_PROC.
 ;
-    _name.category_id             PD_GROUP
+    _name.category_id             CIF_PD_HEAD
     _name.object_id               PD_DATA
 
     loop_
@@ -6816,7 +6816,7 @@ save_PD_DIFFRACTOGRAM
     This category includes data names relating to a diffractogram
     as a whole.
 ;
-    _name.category_id             PD_GROUP
+    _name.category_id             CIF_PD_HEAD
     _name.object_id               PD_DIFFRACTOGRAM
     _category_key.name            '_pd_diffractogram.id'
 
@@ -7079,7 +7079,7 @@ save_PD_INSTR
     _diffrn_radiation.probe (specifying the nature of the radiation
     used) is employed for all data sets.
 ;
-    _name.category_id             PD_GROUP
+    _name.category_id             CIF_PD_HEAD
     _name.object_id               PD_INSTR
     _category_key.name            '_pd_instr.id'
 
@@ -8125,7 +8125,7 @@ save_PD_INSTR_DETECTOR
     _pd_instr.divg_*, _pd_instr.slit_* and  _pd_instr.soller_*) with
     the detector IDs (_pd_instr_detector.id).
 ;
-    _name.category_id             PD_GROUP
+    _name.category_id             CIF_PD_HEAD
     _name.object_id               PD_INSTR_DETECTOR
     _category_key.name            '_pd_instr_detector.id'
 
@@ -8909,7 +8909,7 @@ save_PD_MEAS_INFO_AUTHOR
     This section contains information about the person(s)
     who conducted the measurement.
 ;
-    _name.category_id             PD_GROUP
+    _name.category_id             CIF_PD_HEAD
     _name.object_id               PD_MEAS_INFO_AUTHOR
     _category_key.name            '_pd_meas_info_author.name'
 
@@ -9085,7 +9085,7 @@ save_PD_MEAS_OVERALL
     transported between laboratories, the information in this section of
     the CIF will rarely be changed once data collection is complete.
 ;
-    _name.category_id             PD_GROUP
+    _name.category_id             CIF_PD_HEAD
     _name.object_id               PD_MEAS_OVERALL
     _category_key.name            '_pd_meas_overall.diffractogram_id'
 
@@ -9680,7 +9680,7 @@ save_PD_PEAK
     processed diffractogram and thus corrections for position
     and intensity will have been previously applied.
 ;
-    _name.category_id             PD_GROUP
+    _name.category_id             CIF_PD_HEAD
     _name.object_id               PD_PEAK
 
     loop_
@@ -10109,7 +10109,7 @@ save_PD_PEAK_OVERALL
     This category describes general aspects of the peak extraction
     process.
 ;
-    _name.category_id             PD_GROUP
+    _name.category_id             CIF_PD_HEAD
     _name.object_id               PD_PEAK_OVERALL
     _category_key.name            '_pd_peak_overall.id'
     _description_example.case
@@ -10192,7 +10192,7 @@ save_PD_PHASE
     structural analysis is performed, the structural results will be placed in
     different data blocks, using CIF entries from the core CIF dictionary.
 ;
-    _name.category_id             PD_GROUP
+    _name.category_id             CIF_PD_HEAD
     _name.object_id               PD_PHASE
     _category_key.name            '_pd_phase.id'
 
@@ -10387,7 +10387,7 @@ save_PD_PHASE_BLOCK
     and the _pd_phase.id of the phase contained within
     that block.
 ;
-    _name.category_id             PD_GROUP
+    _name.category_id             CIF_PD_HEAD
     _name.object_id               PD_PHASE_BLOCK
     _category_key.name            '_pd_phase_block.id'
 
@@ -10431,7 +10431,7 @@ save_PD_PHASE_MASS
     not be used where the mass composition has been determined
     by other means.
 ;
-    _name.category_id             PD_GROUP
+    _name.category_id             CIF_PD_HEAD
     _name.object_id               PD_PHASE_MASS
 
     loop_
@@ -10705,7 +10705,7 @@ save_PD_PREF_ORIENT
     Jarvinen, M. (1993). J. Appl. Cryst. 26, 525-531 for
     further information.
 ;
-    _name.category_id             PD_GROUP
+    _name.category_id             CIF_PD_HEAD
     _name.object_id               PD_PREF_ORIENT
 
     loop_
@@ -10906,7 +10906,7 @@ save_PD_PREF_ORIENT_MARCH_DOLLASE
     See Dollase, W. A. (1986). J. Appl. Cryst. 19, 267-272 for
     further information.
 ;
-    _name.category_id             PD_GROUP
+    _name.category_id             CIF_PD_HEAD
     _name.object_id               PD_PREF_ORIENT_MARCH_DOLLASE
 
     loop_
@@ -11231,7 +11231,7 @@ save_PD_PREF_ORIENT_SPHERICAL_HARMONICS
     See Jarvinen, M. (1993). J. Appl. Cryst. 26, 525-531 for
     further information.
 ;
-    _name.category_id             PD_GROUP
+    _name.category_id             CIF_PD_HEAD
     _name.object_id               PD_PREF_ORIENT_SPHERICAL_HARMONICS
 
     loop_
@@ -11523,7 +11523,7 @@ save_PD_PREP
     sample might be a specific batch from a specific manufacturer, and the
     specimen is the material taken from the bottle and placed in the instrument.
 ;
-    _name.category_id             PD_GROUP
+    _name.category_id             CIF_PD_HEAD
     _name.object_id               PD_PREP
     _category_key.name            '_pd_prep.id'
     _description_example.case
@@ -11750,7 +11750,7 @@ save_PD_PROC_INFO_AUTHOR
     This section contains information about the person(s)
     who processed the data.
 ;
-    _name.category_id             PD_GROUP
+    _name.category_id             CIF_PD_HEAD
     _name.object_id               PD_PROC_INFO_AUTHOR
     _category_key.name            '_pd_proc_info_author.name'
 
@@ -11932,7 +11932,7 @@ save_PD_PROC_LS
     the core _refine_ls_ entries may also be useful (for example
     _refine_ls_shift/su_*).
 ;
-    _name.category_id             PD_GROUP
+    _name.category_id             CIF_PD_HEAD
     _name.object_id               PD_PROC_LS
     _category_key.name            '_pd_proc_ls.diffractogram_id'
 
@@ -12309,7 +12309,7 @@ save_PD_PROC_OVERALL
     terms. If the data set is reprocessed, this section may be
     replaced.
 ;
-    _name.category_id             PD_GROUP
+    _name.category_id             CIF_PD_HEAD
     _name.object_id               PD_PROC_OVERALL
     _category_key.name            '_pd_proc_overall.diffractogram_id'
 
@@ -12594,7 +12594,7 @@ save_PD_QPA_CALIB_FACTOR
     quantitative phase analysis in general, see Chapter 3.9 of International
     Tables, Vol. H, and references therein.
 ;
-    _name.category_id             PD_GROUP
+    _name.category_id             CIF_PD_HEAD
     _name.object_id               PD_QPA_CALIB_FACTOR
     _category_key.name            '_pd_qpa_calib_factor.phase_id'
 
@@ -13052,7 +13052,7 @@ save_PD_QPA_EXTERNAL_STD
     calculated. For a review on quantitative phase analysis, see
     Chapter 3.9 of International Tables, Vol. H, and references therein.
 ;
-    _name.category_id             PD_GROUP
+    _name.category_id             CIF_PD_HEAD
     _name.object_id               PD_QPA_EXTERNAL_STD
     _category_key.name            '_pd_qpa_external_std.diffractogram_id'
 
@@ -13232,7 +13232,7 @@ save_PD_QPA_INTENSITY_FACTOR
     For a review on quantitative phase analysis, see Chapter 3.9 of
     International Tables, Vol. H, and references therein.
 ;
-    _name.category_id             PD_GROUP
+    _name.category_id             CIF_PD_HEAD
     _name.object_id               PD_QPA_INTENSITY_FACTOR
 
     loop_
@@ -13412,7 +13412,7 @@ save_PD_QPA_INTERNAL_STD
     For a review on quantitative phase analysis, see Chapter 3.9 of
     International Tables, Vol. H, and references therein.
 ;
-    _name.category_id             PD_GROUP
+    _name.category_id             CIF_PD_HEAD
     _name.object_id               PD_QPA_INTERNAL_STD
 
     loop_
@@ -13635,7 +13635,7 @@ save_PD_QPA_OVERALL
     For a review on quantitative phase analysis, see Chapter 3.9 of
     International Tables, Vol. H, and references therein.
 ;
-    _name.category_id             PD_GROUP
+    _name.category_id             CIF_PD_HEAD
     _name.object_id               PD_QPA_OVERALL
     _category_key.name            '_pd_qpa_overall.diffractogram_id'
 
@@ -13967,7 +13967,7 @@ save_PD_SPEC
     sample might be a specific batch from a specific manufacturer, and the
     specimen is the material taken from the bottle and placed in the instrument.
 ;
-    _name.category_id             PD_GROUP
+    _name.category_id             CIF_PD_HEAD
     _name.object_id               PD_SPEC
     _category_key.name            '_pd_spec.id'
     _description_example.case
@@ -14543,7 +14543,7 @@ save_
 
        Deprecated _pd_refln.wavelength_id after consultation with PDDMG.
 ;
-         2.5.0                    2026-06-18
+         2.5.0                    2026-06-19
 ;
        ## Retain above version number and increment date until final
        ## release
@@ -14803,4 +14803,7 @@ save_
        MULTIBLOCK_CORE.
 
        Added _pd_proc.d_spacing_perpendicular.
+
+       Renamed dictionary from CIF_POW to CIF_PD and the head category from
+       PD_GROUP to CIF_PD_HEAD.
 ;
