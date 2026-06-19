@@ -17,7 +17,7 @@ data_CIF_PD
     _dictionary.version           2.5.0
     _dictionary.date              2026-06-19
     _dictionary.uri
-https://raw.githubusercontent.com/COMCIFS/Powder_Dictionary/master/cif_pow.dic
+https://raw.githubusercontent.com/COMCIFS/cif_pd/master/cif_pow.dic
     _dictionary.ddl_conformance   4.2.0
     _dictionary.licensing_SPDX    CC-BY-4.0
     _dictionary.namespace         CifCore

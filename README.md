@@ -1,4 +1,4 @@
-[![CIF syntax check](https://github.com/COMCIFS/Powder_Dictionary/actions/workflows/main.yml/badge.svg)](https://github.com/COMCIFS/Powder_Dictionary/actions)
+[![CIF syntax check](https://github.com/COMCIFS/cif_pd/actions/workflows/main.yml/badge.svg)](https://github.com/COMCIFS/cif_pd/actions)
 # Powder Dictionary
 
 Definitions of CIF data names for powder diffraction.
@@ -18,9 +18,9 @@ Contributions are very welcome, both from powder diffraction experts and people 
 3. Commenting on already existing issues
 4. Reviewing pull requests
 
-If the "Github way" is not familiar to you, we suggest looking at 
-[some closed issues](https://github.com/COMCIFS/Powder_Dictionary/issues?q=is%3Aissue+is%3Aclosed)
-and [some closed pull requests](https://github.com/COMCIFS/Powder_Dictionary/issues?q=is%3Apr+is%3Aclosed)
+If the "GitHub way" is not familiar to you, we suggest looking at
+[some closed issues](https://github.com/COMCIFS/cif_pd/issues?q=is%3Aissue+is%3Aclosed)
+and [some closed pull requests](https://github.com/COMCIFS/cif_pd/issues?q=is%3Apr+is%3Aclosed)
 to see how the process works. 
 You may also find [this wiki entry](https://github.com/COMCIFS/cif_core/wiki/Getting-started-with-Github-and-Git-for-development-of-CIF-dictionaries) helpful.
 
