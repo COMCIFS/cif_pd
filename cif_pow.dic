@@ -9674,7 +9674,7 @@ save_PD_PEAK
     measured or, if present, the processed diffractogram. Each
     peak in this table will have a unique label (see _pd_peak.id).
     The reflections and phases associated with each peak will be
-    specified in other sections (see REFLN and PD_PHASE).
+    specified in other sections (see REFLN and PD_PEAK_PHASE).
 
     Note that peak positions are customarily determined from the
     processed diffractogram and thus corrections for position
@@ -10176,6 +10176,182 @@ save_pd_peak_overall.id
     _type.source                  Assigned
     _type.container               Single
     _type.contents                Code
+
+save_
+
+save_PD_PEAK_PHASE_MAP
+
+    _definition.id                PD_PEAK_PHASE_MAP
+    _definition.scope             Category
+    _definition.class             Loop
+    _definition.update            2026-05-18
+    _description.text
+;
+    The category of data items used to identify which phases contribute
+    to which peaks in a given diffractogram.
+;
+    _name.category_id             PD_GROUP
+    _name.object_id               PD_PEAK_PHASE_MAP
+
+    loop_
+      _category_key.name
+         '_pd_peak_phase_map.diffractogram_id'
+         '_pd_peak_phase_map.peak_id'
+         '_pd_peak_phase_map.phase_id'
+
+    loop_
+      _description_example.case
+      _description_example.detail
+;
+         data_block_1
+           _pd_diffractogram.id   A_DIFFRACTION_PATTERN
+
+           loop_
+           _pd_peak.id
+           _pd_peak.d_spacing
+           _pd_peak.pk_height
+           a  4.25   17
+           b  3.35  131
+
+         data_block_2
+           _pd_diffractogram.id   A_DIFFRACTION_PATTERN
+           _pd_phase.id           Quartz
+
+           loop_
+           _pd_peak_phase_map.peak_id
+           a b
+
+         data_block_3
+           _pd_diffractogram.id   A_DIFFRACTION_PATTERN
+           _pd_phase.id           Graphite
+
+         loop_
+           _pd_peak_phase_map.peak_id
+           b
+;
+;
+         In the diffraction pattern identified by `A_DIFFRACTION_PATTERN`,
+         there are two peaks with the given details. These two peaks have
+         contributions from the two phases `Quartz` and `Graphite`.
+
+         Quartz contributes to both peaks. Graphite contributes to one peak.
+;
+;
+         data_block_1
+           _pd_diffractogram.id   A_HISTOGRAM
+
+           loop_
+           _pd_peak.id
+           _pd_peak.d_spacing
+           _pd_peak.pk_height
+           _pd_peak.width_2theta
+           a  4.31    2  3.2
+           b  4.25   17  0.193
+           c  3.34  101  0.198
+           d  3.11    4  4.7
+
+           loop_
+           _pd_amorphous.peak_id
+           a d
+
+         data_block_2
+           _pd_diffractogram.id   A_HISTOGRAM
+           _pd_phase.id           Quartz
+
+           loop_
+           _pd_peak_phase_map.peak_id
+           b c
+
+         data_block_3
+           _pd_diffractogram.id   A_HISTOGRAM
+           _pd_phase.id           Byproduct
+
+           loop_
+           _pd_peak_phase_map.peak_id
+           a d
+;
+;
+         In the diffraction pattern identified by `A_HISTOGRAM`,
+         there are four peaks with the given details. These four peaks
+         have contributions from the two phases `Quartz` and `Byproduct`.
+
+         Each phase contributes to two of the phases. Additionally, two
+         peaks are marked as amorphous.
+;
+save_
+
+save_pd_peak_phase_map.diffractogram_id
+
+    _definition.id                '_pd_peak_phase_map.diffractogram_id'
+    _definition.update            2026-05-18
+    _description.text
+;
+    The diffractogram to which the peak list relates.
+;
+    _name.category_id             pd_peak_phase_map
+    _name.object_id               diffractogram_id
+    _name.linked_item_id          '_pd_diffractogram.id'
+    _type.purpose                 Link
+    _type.source                  Related
+    _type.container               Single
+    _type.contents                Text
+
+save_
+
+save_pd_peak_phase_map.peak_id
+
+    _definition.id                '_pd_peak_phase_map.peak_id'
+    _definition.update            2026-05-18
+    _description.text
+;
+    Code which identifies a powder diffraction peak.
+    This code must match a _pd_peak.id code.
+;
+    _name.category_id             pd_peak_phase_map
+    _name.object_id               peak_id
+    _name.linked_item_id          '_pd_peak.id'
+    _type.purpose                 Link
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Code
+
+save_
+
+save_pd_peak_phase_map.peak_overall_id
+
+    _definition.id                '_pd_peak_phase_map.peak_overall_id'
+    _definition.update            2026-05-18
+    _description.text
+;
+    A code linking to general information about peak description and
+    determination for the linked peaks.
+;
+    _name.category_id             pd_peak_phase_map
+    _name.object_id               peak_overall_id
+    _name.linked_item_id          '_pd_peak_overall.id'
+    _type.purpose                 Link
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Code
+
+save_
+
+save_pd_peak_phase_map.phase_id
+
+    _definition.id                '_pd_peak_phase_map.phase_id'
+    _definition.update            2026-05-18
+    _description.text
+;
+    A code which identifies the particular phase to which
+    this peak belongs.
+;
+    _name.category_id             pd_peak_phase_map
+    _name.object_id               phase_id
+    _name.linked_item_id          '_pd_phase.id'
+    _type.purpose                 Link
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Text
 
 save_
 
@@ -14798,6 +14974,9 @@ save_
        MULTIBLOCK_CORE is first. This changes the order in which categories
        are defined so that CIF_IMG_HEAD cannot block definitions in
        MULTIBLOCK_CORE.
+
+       Added PD_PEAK_PHASE_MAP to allow a mapping between peaks and the
+       phases which contribute to them in each diffractogram.
 
        Added _refln.structure_id as key to REFLN to maintain compatibilty with
        MULTIBLOCK_CORE.
