@@ -5,7 +5,7 @@ Definitions of CIF data names for powder diffraction.
 
 ## Warning
 
-[This dictionary](cif_pow.dic) is the latest **draft** version. Definitions are subject to change and software 
+[This dictionary](cif_pd.dic) is the latest **draft** version. Definitions are subject to change and software
 should be careful not to hard-code information. The latest approved powder dictionary is
 available from the [IUCr CIF website](https://www.iucr.org/resources/cif/dictionaries).
 
