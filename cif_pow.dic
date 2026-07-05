@@ -3474,7 +3474,7 @@ save_PD_CALIB_XCOORD
     _definition.id                PD_CALIB_XCOORD
     _definition.scope             Category
     _definition.class             Loop
-    _definition.update            2026-06-24
+    _definition.update            2025-06-19
     _description.text
 ;
     This category allows for the calibration of various X-coordinate axes
@@ -3518,8 +3518,8 @@ save_PD_CALIB_XCOORD
 
     loop_
       _category_key.name
-         '_pd_calib_xcoord.detector_id'
          '_pd_calib_xcoord.id'
+         '_pd_calib_xcoord.xcoord_overall_id'
 
     loop_
       _description_example.case
@@ -3535,24 +3535,22 @@ save_PD_CALIB_XCOORD
              _pd_calib_xcoord.id
              _pd_calib_xcoord.nominal_2theta
              _pd_calib_xcoord.actual_2theta
-             _pd_calib_xcoord.detector_id
-              a   10.01   10.011  A
-              b   10.03   10.032  A
-              c   10.05   10.053  A
-              d   10.07   10.074  A
+              a   10.01   10.011
+              b   10.03   10.032
+              c   10.05   10.053
+              d   10.07   10.074
               # ...
 
              loop_
              _pd_data.point_id
              _pd_meas.2theta_scan
-             _pd_meas.detector_id
              _pd_proc.2theta_corrected
              _pd_meas.counts_total
              _pd_calc.intensity_total
-             1   10.01  A  10.011  1234    1234.1
-             2   10.03  A  10.033  1235    1235.3
-             3   10.05  A  10.055  1352    1236.5
-             4   10.07  A  10.077  1324    1237.7
+             1   10.01   10.011  1234    1234.1
+             2   10.03   10.033  1235    1235.3
+             3   10.05   10.055  1352    1236.5
+             4   10.07   10.077  1324    1237.7
              # ...
 
          data_unknownsample
@@ -3564,11 +3562,10 @@ save_PD_CALIB_XCOORD
              _pd_meas.2theta_scan
              _pd_proc.2theta_corrected
              _pd_meas.counts_total
-             _pd_meas.detector_id
-             A   10.02   10.022  3134  A
-             B   10.04   10.044  3335  A
-             C   10.06   10.066  3452  A
-             D   10.08   10.088  3324  A
+             A   10.02   10.022  3134
+             B   10.04   10.044  3335
+             C   10.06   10.066  3452
+             D   10.08   10.088  3324
              # ...
 ;
 ;
