@@ -15,7 +15,7 @@ data_CIF_POW
     _dictionary.title             CIF_POW
     _dictionary.class             Instance
     _dictionary.version           2.5.0
-    _dictionary.date              2026-06-24
+    _dictionary.date              2026-06-18
     _dictionary.uri
 https://raw.githubusercontent.com/COMCIFS/Powder_Dictionary/master/cif_pow.dic
     _dictionary.ddl_conformance   4.2.0
@@ -13039,7 +13039,7 @@ save_PD_QPA_EXTERNAL_STD
     _definition.id                PD_QPA_EXTERNAL_STD
     _definition.scope             Category
     _definition.class             Set
-    _definition.update            2026-06-24
+    _definition.update            2025-06-20
     _description.text
 ;
     This category identifies the external diffractogram used for
@@ -13057,13 +13057,12 @@ save_PD_QPA_EXTERNAL_STD
 ;
     _name.category_id             PD_GROUP
     _name.object_id               PD_QPA_EXTERNAL_STD
-    _category_key.name            '_pd_qpa_external_std.instr_id'
+    _category_key.name            '_pd_qpa_external_std.diffractogram_id'
 
     _description_example.case
 ;
          data_ext_std_diffractogram
             _audit.schema                Custom
-            _pd_instr.id                 labmachine
             _pd_diffractogram.id         THE_REFERENCE
             _pd_diffractogram.instr_id   labmachine
             _pd_diffractogram.spec_id    REF_spec
@@ -13081,13 +13080,11 @@ save_PD_QPA_EXTERNAL_STD
             NIST_ALUMINA_676A   99.02   1.11
 
             _pd_qpa_external_std.k_factor           293.36
-            _pd_qpa_external_std.diffractogram_id   THE_REFERENCE
             _pd_char.mass_atten_coef_mu_calc        3159
             _pd_qpa_overall.method                  external_standard
 
          data_diffractogram_block
             _audit.schema                Custom
-            _pd_instr.id                 labmachine
             _pd_diffractogram.id         DIFFRACTOGRAM_2
             _pd_diffractogram.instr_id   labmachine
             _pd_diffractogram.spec_id    UNK_spec
@@ -13097,6 +13094,7 @@ save_PD_QPA_EXTERNAL_STD
             _pd_prep.char_id  UNK_char
             _pd_spec.id       UNK_spec
             _pd_spec.prep_id  UNK_prep
+
 
             loop_
             _pd_phase_mass.phase_id
@@ -13112,15 +13110,17 @@ save_PD_QPA_EXTERNAL_STD
 ;
          In the first block, the K factor, or diffractometer constant, is
          calculated from a diffraction pattern of a previously characterised
-         standard, collected under set conditions on the given instrument; see
-         the _pd_qpa_overall.method enumeration external_standard.
+         standard, collected under set conditions; see the
+         _pd_qpa_overall.method enumeration external_standard.
 
          In the second block, a diffraction pattern containing two phases
          (PHASE_1 and PHASE_2) has been quantified using the external standard
          algorithm after Rietveld refinement. Knowing the instrument id value
          used to collect the diffractogram of the unknown, the
-         _pd_qpa_external_std.k_factor value can be looked up directly and used
-         to calculate the absolute mass percent of the phases present in the
+         _pd_qpa_external_std.diffractogram_id values can be looked at to find
+         one that has the same instrument id value, and thus the
+         _pd_qpa_external_std.k_factor value can be used to calculate the
+         absolute mass percent of the phases present in the
          diffractogram.
 
          A Custom _audit.schema is required due to looping _pd_phase.id values.
@@ -13140,24 +13140,6 @@ save_pd_qpa_external_std.diffractogram_id
     _name.category_id             pd_qpa_external_std
     _name.object_id               diffractogram_id
     _name.linked_item_id          '_pd_diffractogram.id'
-    _type.purpose                 Link
-    _type.source                  Related
-    _type.container               Single
-    _type.contents                Text
-
-save_
-
-save_pd_qpa_external_std.instr_id
-
-    _definition.id                '_pd_qpa_external_std.instr_id'
-    _definition.update            2026-06-24
-    _description.text
-;
-    The instrument (see _pd_instr.id) to which the external standard relates.
-;
-    _name.category_id             pd_qpa_external_std
-    _name.object_id               instr_id
-    _name.linked_item_id          '_pd_instr.id'
     _type.purpose                 Link
     _type.source                  Related
     _type.container               Single
@@ -14580,7 +14562,7 @@ save_
 
        Deprecated _pd_refln.wavelength_id after consultation with PDDMG.
 ;
-         2.5.0                    2026-06-24
+         2.5.0                    2026-06-18
 ;
        ## Retain above version number and increment date until final
        ## release
