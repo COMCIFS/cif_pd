@@ -5362,6 +5362,7 @@ save_PD_MEAS
          '_pd_meas.point_id'
          '_pd_meas.diffractogram_id'
 
+    _description_example.case
 save_
 
 save_pd_instr.dist_spec_vdetc
