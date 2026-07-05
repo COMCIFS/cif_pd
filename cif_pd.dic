@@ -6186,6 +6186,33 @@ save_PD_PROC
          '_pd_proc.point_id'
          '_pd_proc.diffractogram_id'
 
+    _description_example.case
+;
+        _pd_diffractogram.id  PATTERN_2
+
+        loop_
+         _pd_proc.point_id
+         _pd_proc.d_spacing
+         _pd_proc.intensity_total
+         _pd_proc.ls_weight
+         0   1.489225   0.60008   6528.86960
+         1   1.495170   0.63531   6316.37917
+         2   1.501138   0.64690   6107.85715
+         3   1.507131   0.65580   6162.14696
+         #further data points follow
+;
+    _description_example.detail
+;
+         Tabulation of processed diffraction data consisting of d-spacing,
+         intensity including background, and the least-squares weighting.
+
+         The category key value associated with _pd_data.point_id is given
+         with every data point. Processed data are normally presented with
+         measured and calculated data in a single loop.
+
+         See PD_DATA for further examples.
+;
+
 save_
 
 save_pd_proc.2theta_corrected
