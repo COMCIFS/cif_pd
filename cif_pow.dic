@@ -13062,16 +13062,8 @@ save_PD_QPA_EXTERNAL_STD
     _description_example.case
 ;
          data_ext_std_diffractogram
-            _audit.schema                Custom
             _pd_diffractogram.id         THE_REFERENCE
             _pd_diffractogram.instr_id   labmachine
-            _pd_diffractogram.spec_id    REF_spec
-
-            _pd_char.id       REF_char
-            _pd_prep.id       REF_prep
-            _pd_prep.char_id  REF_char
-            _pd_spec.id       REF_spec
-            _pd_spec.prep_id  REF_prep
 
             loop_
             _pd_phase_mass.phase_id
@@ -13087,14 +13079,6 @@ save_PD_QPA_EXTERNAL_STD
             _audit.schema                Custom
             _pd_diffractogram.id         DIFFRACTOGRAM_2
             _pd_diffractogram.instr_id   labmachine
-            _pd_diffractogram.spec_id    UNK_spec
-
-            _pd_char.id       UNK_char
-            _pd_prep.id       UNK_prep
-            _pd_prep.char_id  UNK_char
-            _pd_spec.id       UNK_spec
-            _pd_spec.prep_id  UNK_prep
-
 
             loop_
             _pd_phase_mass.phase_id
@@ -13134,8 +13118,8 @@ save_pd_qpa_external_std.diffractogram_id
     _definition.update            2023-01-15
     _description.text
 ;
-    The diffractogram (see _pd_diffractogram.id) used to calculate the
-    diffractometer constant.
+    The diffractogram (see _pd_diffractogram.id) which is being used to
+    calculate the diffractometer constant.
 ;
     _name.category_id             pd_qpa_external_std
     _name.object_id               diffractogram_id
