@@ -10551,6 +10551,8 @@ save_pd_phase_mass.absolute
     standard phase is 22.5 wt%.
 
     See also _pd_phase_mass.original.
+
+    See Rowles (2024) Powder Diffr. 39(4), 224-226, for further discussion.
 ;
     _name.category_id             pd_phase_mass
     _name.object_id               absolute
@@ -10623,6 +10625,8 @@ save_pd_phase_mass.original
     _pd_phase_mass.absolute.
 
     See also _pd_phase_mass.absolute.
+
+    See Rowles (2024) Powder Diffr. 39(4), 224-226, for further discussion.
 ;
     _name.category_id             pd_phase_mass
     _name.object_id               original
