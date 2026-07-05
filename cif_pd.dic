@@ -5363,6 +5363,31 @@ save_PD_MEAS
          '_pd_meas.diffractogram_id'
 
     _description_example.case
+;
+         _pd_diffractogram.id  PATTERN_1
+
+         loop_
+         _pd_meas.point_id
+         _pd_meas.2theta_scan
+         _pd_meas.intensity_total
+         1   5.001   43.364
+         2   5.004   38.007
+         3   5.007   38.318
+         4   5.010   41.877
+         #further data points follow
+;
+    _description_example.detail
+;
+         Tabulation of measured diffraction data consisting of uncorrected
+         2θ values, and pattern intensity including background.
+
+         The category key value associated with _pd_data.point_id is given
+         with every data point. Measured data are normally presented with
+         processed and calculated data in a single loop.
+
+         See PD_DATA for further examples.
+;
+
 save_
 
 save_pd_instr.dist_spec_vdetc
