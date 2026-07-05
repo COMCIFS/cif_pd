@@ -10453,6 +10453,7 @@ save_PD_PHASE_MASS
       _description_example.case
       _description_example.detail
 ;
+         data_all_values
          _audit.schema         Custom
          _pd_diffractogram.id  A_DIFFRACTOGRAM
 
@@ -10522,6 +10523,37 @@ save_PD_PHASE_MASS
 
          Blocks containing information about more than one phase or
          diffractogram must set a non-default value for _audit.schema.
+;
+;
+         data_b1
+         _pd_diffractogram.id  ANOTHER_DIFFRACTOGRAM
+         _pd_phase.id          PHASE_1
+
+         _pd_phase_mass.percent   45.45
+         _pd_phase_mass.absolute  30.36
+         _pd_phase_mass.original  40.49
+
+         data_b2
+         _pd_diffractogram.id  ANOTHER_DIFFRACTOGRAM
+         _pd_phase.id          PHASE_2
+
+         _pd_qpa_internal_std.mass_percent    25.000
+
+         _pd_phase_mass.percent   37.42
+         _pd_phase_mass.absolute  25.00
+         _pd_phase_mass.original   0
+
+         data_b3
+         _pd_diffractogram.id  ANOTHER_DIFFRACTOGRAM
+         _pd_phase.id          PHASE_3
+
+         _pd_phase_mass.percent   17.13
+         _pd_phase_mass.absolute  11.44
+         _pd_phase_mass.original  15.26
+;
+;
+         As for previous example, but with a block structure conforming with
+         the default _audit.schema.
 ;
 
 save_
