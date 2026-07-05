@@ -5036,7 +5036,7 @@ save_PD_CALC
     Rietveld refinement.
 
     The intensities contained within PD_CALC represent one-dimensional
-    datasets, that is, intensity as a function of _pd_calc.point_id.
+    datasets, that is, intensity as a function of _pd_calc.point_id,
     2θ, d-spacing, time-of-flight, position, or other applicable
     diffraction-related coordinate. Intensities can be assigned to each
     data point through the equivalent *.point_id in PD_MEAS or PD_PROC.
