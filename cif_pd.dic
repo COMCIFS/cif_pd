@@ -5049,6 +5049,32 @@ save_PD_CALC
          '_pd_calc.point_id'
          '_pd_calc.diffractogram_id'
 
+    _description_example.case
+;
+         _pd_diffractogram.id  PATTERN_1
+
+         loop_
+         _pd_calc.point_id
+         _pd_calc.intensity_total
+         _pd_calc.intensity_bkg
+         1   25.994961   25.994961
+         2   26.200290   26.200290
+         3   26.404083   26.404083
+         4   26.606346   26.606346
+         #further data points follow
+;
+    _description_example.detail
+;
+         Tabulation of calculated diffraction data consisting of pattern intensity,
+         including background, and the calculated background.
+
+         The category key value associated with _pd_data.point_id is given
+         with every data point. The x-coordinate associated with each point
+         would be given in the appropratiate _pd_meas.* or _pd_proc.* loop.
+
+         See PD_DATA for further examples.
+;
+
 save_
 
 save_pd_calc.component_intensities_net
