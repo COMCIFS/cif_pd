@@ -5071,6 +5071,8 @@ save_PD_CALC
          The category key value associated with _pd_data.point_id is given
          with every data point. The x-coordinate associated with each point
          would be given in the appropratiate _pd_meas.* or _pd_proc.* loop.
+         Calculated data are normally presented with measured and processed
+         data in a single loop.
 
          See PD_DATA for further examples.
 ;
