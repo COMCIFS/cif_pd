@@ -5065,8 +5065,8 @@ save_PD_CALC
 ;
     _description_example.detail
 ;
-         Tabulation of calculated diffraction data consisting of pattern intensity,
-         including background, and the calculated background.
+         Tabulation of calculated diffraction data consisting of pattern
+         intensity, including background, and the calculated background.
 
          The category key value associated with _pd_data.point_id is given
          with every data point. The x-coordinate associated with each point
