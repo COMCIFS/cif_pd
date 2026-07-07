@@ -10495,6 +10495,7 @@ save_PD_PHASE_MASS
          blocks so as to maintain the default value of _audit.schema.
 ;
 ;
+         data_all_values
          _audit.schema         Custom
 
          _pd_diffractogram.id  ANOTHER_DIFFRACTOGRAM
