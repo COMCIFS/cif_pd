@@ -10631,7 +10631,7 @@ save_PD_PHASE_MASS
 ;
 ;
          data_all_results
-         _audit_schema         Custom
+         _audit.schema         Custom
          _pd_diffractogram.id  ANOTHER_DIFFRACTOGRAM
 
          _pd_qpa_internal_std.mass_percent    25.000
