@@ -2177,7 +2177,7 @@ save_PD_CALC_OVERALL
          1   4.03625   1053.9   1074.628 [ 21.34 204.535 513.156 ]
          2   4.07375   1060.2   1072.667 [ 21.45 205.755 516.456 ]
          3   4.11125   1017.3   1070.768 [ 21.55 206.975 513.256 ]
-         #...
+         # ...
 ;
     _description_example.detail
 ;
@@ -2750,7 +2750,7 @@ save_PD_CALIB_DETECTED_INTENSITY
          2   B   10.01   1364.36(57)   1318.22(94)
          3   A   10.02   1324.35(87)   1324.35(87)
          4   B   10.03   1298.36(74)   1254.45(102)
-         #...
+         # ...
 ;
 ;
          The detector responses of 1 and 1.035 for detectors A and B given
@@ -3631,7 +3631,7 @@ save_PD_CALIB_XCOORD
           2   A  1114.742200     1.495170
           3   A  1119.201170     1.501138
           4   A  1123.677980     1.507131
-          ...
+          # ...
 
          loop_
          _pd_data.point_id
@@ -3644,7 +3644,7 @@ save_PD_CALIB_XCOORD
           ii  A  1114.742200     1.495170     0.635318   0.571286
           iii A  1119.201170     1.501138     0.646909   0.593895
           iv  A  1123.677980     1.507131     0.655807   0.620014
-          ...
+          # ...
 ;
 ;
          A diffractogram identified as "TOF_STD" was collected on the
@@ -3670,7 +3670,7 @@ save_PD_CALIB_XCOORD
           2   A  1141.764990     0.728226
           3   A  1146.332050     0.734770
           4   A  1150.917370     0.767760
-          ...
+          # ...
 ;
 ;
          A diffractogram identified as "SAMPLE_1" was collected on the
@@ -4454,7 +4454,7 @@ save_PD_CALIBRATION
          a   1    20051.5   4.1    1234
          b   2    20139.1   4.2    1434
          c   3    20226.7   4.3    1457
-         #...
+         # ...
 ;
     _description_example.detail
 ;
@@ -6973,7 +6973,7 @@ save_PD_DIFFRACTOGRAM
             5.04   38.007   0.0505   26.200290    26.200290
             5.07   38.318   0.0465   26.404083    26.404083
             5.10   41.877   0.0452   26.606346    26.606346
-            #...
+            # ...
 ;
 ;
          A set of diffraction conditions, instrument settings, and specimen
@@ -7030,7 +7030,7 @@ save_PD_DIFFRACTOGRAM
                5.04   38.007   0.0505   26.200290    26.200290
                5.07   38.318   0.0465   26.404083    26.404083
                5.10   41.877   0.0452   26.606346    26.606346
-               #...
+               # ...
 ;
 ;
          A functionally identical data set as to the first example.
@@ -9238,7 +9238,7 @@ save_PD_MEAS_OVERALL
           _pd_meas.counts_total
           1   1234
           2   1256
-          #...
+          # ...
 ;
 ;
          The measured diffractogram is in equally spaced 2θ points, starting
@@ -9266,7 +9266,7 @@ save_PD_MEAS_OVERALL
           _pd_meas.counts_total
           1   5.02   1234
           2   5.04   1256
-          #...
+          # ...
 ;
 ;
          The information here applies to the diffractogram with the id
@@ -9289,7 +9289,7 @@ save_PD_MEAS_OVERALL
           _pd_meas.intensity_total_su
           1   50300   1234   23
           2   50400   1256   24
-          #...
+          # ...
 ;
 ;
          The information here applies to the diffractogram with the id
@@ -12548,7 +12548,7 @@ save_PD_PROC_OVERALL
           _pd_proc.intensity_total_su
           1   1234   23
           2   1256   24
-          #...
+          # ...
 ;
 ;
          The processed diffractogram is in equally-spaced 2θ points, starting
