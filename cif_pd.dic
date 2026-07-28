@@ -3560,7 +3560,7 @@ save_PD_CALIB_XCOORD
              _pd_calib_xcoord_overall.phase_id          SRM640E
 
              _pd_instr_detector.id                A
-             _pd_instr_detector.xcood_overall_id  calib_1
+             _pd_instr_detector.xcoord_overall_id calib_1
 
              loop_
              _pd_calib_xcoord.id
@@ -3618,7 +3618,7 @@ save_PD_CALIB_XCOORD
 
          The calibration conditions, "calib_1", are assigned to the calibrated
          detector, "A", via the linked data name
-         _pd_instr_detector.xcood_overall_id.
+         _pd_instr_detector.xcoord_overall_id.
 
          The data block "unknownsample" contains a diffractogram
          identified as "UNKNOWN_DIFFRACTOGRAM", which was collected on the
