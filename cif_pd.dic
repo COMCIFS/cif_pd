@@ -15,7 +15,7 @@ data_CIF_PD
     _dictionary.title             CIF_PD
     _dictionary.class             Instance
     _dictionary.version           2.5.0
-    _dictionary.date              2026-07-08
+    _dictionary.date              2026-07-20
     _dictionary.uri
 https://raw.githubusercontent.com/COMCIFS/cif_pd/master/cif_pd.dic
     _dictionary.ddl_conformance   4.2.0
@@ -3542,42 +3542,53 @@ save_PD_CALIB_XCOORD
 
     loop_
       _category_key.name
+         '_pd_calib_xcoord.detector_id'
          '_pd_calib_xcoord.id'
-         '_pd_calib_xcoord.xcoord_overall_id'
 
     loop_
       _description_example.case
       _description_example.detail
 ;
          data_calibrationinformation
-             _pd_diffractogram.id                      CALIBRATION_DIFFRACTOGRAM
-             _pd_diffractogram.instr_id                INSTRUMENT_1
-             _pd_calib_xcoord_overall.id               main_calibration
-             _pd_calib_xcoord_overall.diffractogram_id CALIBRATION_DIFFRACTOGRAM
+             _audit_dataset.id  defa753a-f10b-4d4e-93a2-b2379d1d1f6c
+
+             _pd_diffractogram.id        CALIB_DIFFRACTOGRAM
+             _pd_diffractogram.instr_id  INSTRUMENT_1
+
+             _pd_calib_xcoord_overall.id                calib_1
+             _pd_calib_xcoord_overall.diffractogram_id  CALIB_DIFFRACTOGRAM
+             _pd_calib_xcoord_overall.phase_id          SRM640E
+
+             _pd_instr_detector.id                A
+             _pd_instr_detector.xcood_overall_id  calib_1
 
              loop_
              _pd_calib_xcoord.id
              _pd_calib_xcoord.nominal_2theta
              _pd_calib_xcoord.actual_2theta
-              a   10.01   10.011
-              b   10.03   10.032
-              c   10.05   10.053
-              d   10.07   10.074
+             _pd_calib_xcoord.detector_id
+              a   10.01   10.011  A
+              b   10.03   10.032  A
+              c   10.05   10.053  A
+              d   10.07   10.074  A
               # ...
 
              loop_
              _pd_data.point_id
              _pd_meas.2theta_scan
+             _pd_meas.detector_id
              _pd_proc.2theta_corrected
              _pd_meas.counts_total
              _pd_calc.intensity_total
-             1   10.01   10.011  1234    1234.1
-             2   10.03   10.033  1235    1235.3
-             3   10.05   10.055  1352    1236.5
-             4   10.07   10.077  1324    1237.7
+             1   10.01  A  10.011  1234    1234.1
+             2   10.03  A  10.033  1235    1235.3
+             3   10.05  A  10.055  1352    1236.5
+             4   10.07  A  10.077  1324    1237.7
              # ...
 
          data_unknownsample
+             _audit_dataset.id  defa753a-f10b-4d4e-93a2-b2379d1d1f6c
+
              _pd_diffractogram.id         UNKNOWN_DIFFRACTOGRAM
              _pd_diffractogram.instr_id   INSTRUMENT_1
 
@@ -3586,15 +3597,16 @@ save_PD_CALIB_XCOORD
              _pd_meas.2theta_scan
              _pd_proc.2theta_corrected
              _pd_meas.counts_total
-             A   10.02   10.022  3134
-             B   10.04   10.044  3335
-             C   10.06   10.066  3452
-             D   10.08   10.088  3324
+             _pd_meas.detector_id
+             A   10.02   10.022  3134  A
+             B   10.04   10.044  3335  A
+             C   10.06   10.066  3452  A
+             D   10.08   10.088  3324  A
              # ...
 ;
 ;
          The data block "calibrationinformation" contains a diffractogram
-         identified as "CALIBRATION_DIFFRACTOGRAM", which was collected on
+         identified as "CALIB_DIFFRACTOGRAM", which was collected on
          the instrument identified as "INSTRUMENT_1", to act as a
          calibration standard for the 2θ axis.
 
@@ -3604,23 +3616,26 @@ save_PD_CALIB_XCOORD
          2θ axis of other diffractograms collected on the same
          instrument.
 
-         The calibration is given the overall id of 'main_calibration', to
-         link the source of the calibration to the individual loop values.
+         The calibration conditions, "calib_1", are assigned to the calibrated
+         detector, "A", via the linked data name
+         _pd_instr_detector.xcood_overall_id.
 
          The data block "unknownsample" contains a diffractogram
          identified as "UNKNOWN_DIFFRACTOGRAM", which was collected on the
-         same instrument, "INSTRUMENT_1". To check if any X-coordinate
-         calibration is available, the instrument id "INSTRUMENT_1" is compared
-         against any entries in _pd_calib_xcoord_overall.diffractogram_id
-         and if a match is found, the X-coordinate calibration could be used
-         to correct the _pd_meas.2theta_scan values in the loop by either direct
-         value replacement, or an interpolation.
+         same instrument, "INSTRUMENT_1". The combination of instrument id,
+         detector id, and xcood_overall id identifies the applicable
+         calibration information.
 ;
 ;
-         _pd_diffractogram.id                        TOF_STD
-         _pd_diffractogram.instr_id                  tof-instrument-1
-         _pd_calib_xcoord_overall.id                 tof-calibration
-         _pd_calib_xcoord_overall.diffractogram_id   TOF_STD
+         data_tof_calib
+         loop_
+         _audit_dataset.id
+         67d9c2d7-f889-4550-9584-2ce1d3fbf6c4
+         33de6444-ad77-4edd-81bd-05d1abfe468f
+         703ea331-4339-4b7c-a9ba-b7eb82d6c50c
+
+         _pd_diffractogram.id         TOF_STD
+         _pd_diffractogram.instr_id   tof-instrument-1
 
          loop_
          _pd_calib_xcoord.id
@@ -3652,12 +3667,17 @@ save_PD_CALIB_XCOORD
          calibration standard to allow the calculation of d-spacing from
          time-of-flight. The measured TOF and processed d-spacing values
          from the resultant analysis are taken as the nominal and actual
-         values, respectively, for the calibration.
+         values, respectively, for the calibration. This calibration is
+         available for reuse for data collected on this instrument and
+         detectors.
 
-         The calibration is given the overall id of 'tof-calibration', to
-         allow other diffractograms to refer to it.
+         The _audit_dataset.id values show the datasets for which the
+         calibration is valid.
 ;
 ;
+         data_real_data
+         _audit_dataset.id   33de6444-ad77-4edd-81bd-05d1abfe468f
+
          _pd_diffractogram.id          SAMPLE_1
          _pd_diffractogram.instr_id    tof-instrument-1
 
@@ -3675,11 +3695,8 @@ save_PD_CALIB_XCOORD
 ;
          A diffractogram identified as "SAMPLE_1" was collected on the
          instrument identified as "tof-instrument-1". Knowing the instrument
-         and detector id values, the correct calibration can be found
-         by looking up the _pd_instr.id value associated with the diffractogram
-         id recorded in _pd_calib_xcoord_overall.diffractogram_id, and then
-         the detector id value associated with the _pd_calib_xcoord_overall.id
-         value in the loop.
+         and detector id values, the correct calibration can be found by
+         looking up those values in the data stored in _pd_calib_xcoord.*.
 ;
 
 save_
@@ -4261,25 +4278,6 @@ save_pd_calib_xcoord.nominal_wavelength
 
 save_
 
-save_pd_calib_xcoord.xcoord_overall_id
-
-    _definition.id                '_pd_calib_xcoord.xcoord_overall_id'
-    _definition.update            2023-07-10
-    _description.text
-;
-    A code which identifies the particular set of overall calibration conditions
-    under which the calibration was calculated.
-;
-    _name.category_id             pd_calib_xcoord
-    _name.object_id               xcoord_overall_id
-    _name.linked_item_id          '_pd_calib_xcoord_overall.id'
-    _type.purpose                 Link
-    _type.source                  Assigned
-    _type.container               Single
-    _type.contents                Text
-
-save_
-
 save_PD_CALIB_XCOORD_OVERALL
 
     _definition.id                PD_CALIB_XCOORD_OVERALL
@@ -4288,7 +4286,7 @@ save_PD_CALIB_XCOORD_OVERALL
     _definition.update            2025-06-19
     _description.text
 ;
-    This category gives the overall information about the X-coordinate
+    This category gives the overall information about the X coordinate
     calibration applied to a given diffractogram.
 
     See PD_CALIB_XCOORD.
@@ -4317,12 +4315,21 @@ save_PD_CALIB_XCOORD_OVERALL
          _pd_calib_xcoord_overall.id                 B
          _pd_calib_xcoord_overall.special_details
                                   "Scanned through direct beam with fine slit."
+
+         loop_
+            _pd_instr_detector.id
+            _pd_instr_detector.xcoord_overall_id
+            1  B
+            2  B
 ;
 ;
          Calibration values given using PD_CALIB_XCOORD category data items
          which refer to the overall calibration conditions identified by
          "B" were derived by scanning the detector through the
          direct beam with a fine slit.
+
+         The two detectors calibrated with those overall calibration conditions
+         are as given.
 ;
 
 save_
@@ -9016,6 +9023,25 @@ save_pd_instr_detector.instr_id
     _name.linked_item_id          '_pd_instr.id'
     _type.purpose                 Link
     _type.source                  Related
+    _type.container               Single
+    _type.contents                Text
+
+save_
+
+save_pd_instr_detector.xcoord_overall_id
+
+    _definition.id                '_pd_instr_detector.xcoord_overall_id'
+    _definition.update            2026-07-10
+    _description.text
+;
+    A code which identifies the particular set of overall X coordinate
+    calibration conditions under which the detector was calibrated.
+;
+    _name.category_id             pd_instr_detector
+    _name.object_id               xcoord_overall_id
+    _name.linked_item_id          '_pd_calib_xcoord_overall.id'
+    _type.purpose                 Link
+    _type.source                  Assigned
     _type.container               Single
     _type.contents                Text
 
@@ -14828,7 +14854,7 @@ save_
 
        Deprecated _pd_refln.wavelength_id after consultation with PDDMG.
 ;
-         2.5.0                    2026-07-08
+         2.5.0                    2026-07-20
 ;
        ## Retain above version number and increment date until final
        ## release
@@ -15096,6 +15122,10 @@ save_
        categories and to allow non-linear calibrations.
 
        Convert PD_PHASE_MASS to Set category.
+
+       Added _pd_calib_xcoord.detector_id as linked key. Removed
+       _pd_calib_xcoord.xcoord_overall_id as key. Added
+       _pd_instr_detector.xcoord_overall_id as linked non-key data name
 
        Altered key of pd_qpa_external_std to be _pd_qpa_external_std.instr_id.
 
