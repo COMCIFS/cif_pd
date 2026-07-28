@@ -9035,7 +9035,7 @@ save_pd_instr_detector.xcoord_overall_id
     _description.text
 ;
     A code which identifies the particular set of overall X coordinate
-    calibration conditions under which the calibration was calculated.
+    calibration conditions under which the detector was calibrated.
 ;
     _name.category_id             pd_instr_detector
     _name.object_id               xcoord_overall_id
