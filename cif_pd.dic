@@ -4318,7 +4318,7 @@ save_PD_CALIB_XCOORD_OVERALL
 
          loop_
             _pd_instr_detector.id
-            _pd_instr_detector.xcood_overall_id
+            _pd_instr_detector.xcoord_overall_id
             1  B
             2  B
 ;
