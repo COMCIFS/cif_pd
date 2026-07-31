@@ -14867,7 +14867,7 @@ save_
        specimen/sample/material, _pd_meas.rocking_angle,
        _pd_proc_info.excluded_region, PD_DATA/PD_CALC/PD_MEAS/PD_PROC,
        _pd_instr.dist*, _pd_meas.position
-       
+
        Added _pd_phase.id, _pd_spec.id, _pd_peak_overall.id,
        _pd_instr_detector.id, _pd_calibration.id, _pd_char.id,
        _pd_prep.id, _pd_diffractogram.id -linked data items to relevant
