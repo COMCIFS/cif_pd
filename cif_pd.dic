@@ -14861,7 +14861,8 @@ save_
        PD_PREF_ORIENT_SPHERICAL_HARMONICS, PD_QPA_EXTERNAL_STD,
        PD_QPA_INTERNAL_STD, PD_BACKGROUND, PD_AMORPHOUS, PD_QPA_OVERALL,
        PD_CALIB_XCOORD, PD_CALIB_XCOORD_OVERALL, PD_CALIB_DETECTED_INTENSITY,
-       PD_CALIB_INCIDENT_INTENSITY, PD_QPA_INTENSITY_FACTOR.
+       PD_CALIB_INCIDENT_INTENSITY, PD_QPA_INTENSITY_FACTOR,
+       PD_CALIB_D_TO_TOF.
 
        Various clarifications in definitions, including absorption,
        specimen/sample/material, _pd_meas.rocking_angle,
@@ -14887,10 +14888,9 @@ save_
        New definitions: _pd_calc.intensity_bkg,
        _diffrn_radiation_wavelength.special_details,
        _pd_meas_overall.step_count_time,
-       _pd_phase.density_diffrn, _pd_phase.atten_coef_mu_calc, and
+       _pd_phase.density_diffrn, _pd_phase.atten_coef_mu_calc,
        _pd_phase.mass_atten_coef_mu_calc,
-       _pd_proc.d_spacing_perpendicular, pd_calib_d_to_tof,
-       _pd_phase_mass.absolute,original.
+       _pd_proc.d_spacing_perpendicular, _pd_phase_mass.absolute,original.
 
        Added ability to record detector circle radius, both fixed and
        varying by measurement point.
