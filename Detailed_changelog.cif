@@ -1,0 +1,286 @@
+#\#CIF_2.0
+# This file contains the full changelogs from the DICTIONARY_AUDIT category loop
+# at the end of the cif_pd.dic file. Released cif_pd.dic files include
+# a summarised form of these changes. This file is intended purely for developer 
+# information and is not guaranteed to be parseable.
+data_changelog
+
+loop_
+_dictionary_audit.version
+_dictionary_audit.date
+_dictionary_audit.revision
+
+         2.5.0                    2026-07-20
+;
+       Added mass absorption coefficient and improved absorption
+       definitions. Added missing su definitions.
+
+       Corrected datetime examples to proper RFC3339 compliance.
+
+       Added pd_calib_d_to_tof.
+
+       Corrected a typo in the PD_CALIB_D_TO_TOF category description.
+
+       Add PD_DIFFRACTOGRAM category and linked data names.
+
+       Added PD_CALC_COMPONENT and related data names.
+
+       Updated many datanames from Number to Measurand.
+
+       Made PD_BLOCK a Loop category.
+
+       Created PD_PREF_ORIENT_MARCH_DOLLASE and
+       PD_PREF_ORIENT_SPHERICAL_HARMONICS to record preferred orientation
+       corrections.
+
+       Updated intensity/count definitions in PD_CALC, PD_MEAS, and PD_PROC.
+
+       Updated descriptions of _pd_meas.counts, _pd_meas.intensity_background,
+       _pd_meas.intensity_container, and _pd_meas.intensity_monitor.
+
+       Removed enumeration range for _pd_proc.intensity_net.
+
+       Added ability to record detector circle radius, both fixed and
+       varying by measurement point.
+
+       Updated many datanames from Number to Measurand.
+
+       Made PD_PHASE a Set category.
+
+       Created PD_QPA_EXTERNAL_STD and PD_QPA_INTERNAL_STD to record
+       quantitative phase analysis by the external and internal standard
+       approaches.
+
+       Changed _pd_meas.step_count_time and _pd_meas.time_of_flight from
+       Integer to Real.
+
+       Created PD_BACKGROUND.
+
+       Update definitions of _pd_phase.name, _pd_qpa_ext_std.phase_name, and
+       _pd_qpa_int_std.phase_name to better represent their contents.
+
+       Created PD_AMORPHOUS.
+
+       Deprecate _pd_calib.std_internal_mass_percent and
+       _pd_calib.std_internal_mass_percent_su.
+
+       Added phase_id and diffractogram_id to PD_PREF_ORIENT_MARCH_DOLLASE and
+       PD_PREF_ORIENT_SPHERICAL_HARMONICS.
+
+       Updated data items to hold block ID values to be of type Link, and to
+       link them formally to _pd_block.id
+
+       Added _pd_phase.id and/or _pd_diffractogram.id-linked data items to
+       PD_CALC_OVERALL, PD_CALIB_D_TO_TOF, PD_INSTR, PD_MEAS_INFO_AUTHOR,
+       PD_MEAS_OVERALL, PD_PREF_ORIENT, PD_PROC_INFO_AUTHOR, PD_PROC_OVERALL,
+       PD_SPEC
+
+       Created PD_QPA_OVERALL to record details about the overall quantitative
+       phase analysis method.
+
+       Update description of _pd_proc.info_datetime to maintain consistency
+       with its Set category.
+
+       Renamed _pd_char.mass_atten_coef_mu_obs to
+       _pd_char.mass_atten_coef_mu_meas.
+
+       Created PD_CALIB_XCOORD and PD_CALIB_XCOORD_OVERALL
+
+       Updated _pd_phase.name
+
+       Created PD_CALIB_DETECTED_INTENSITY
+
+       Created PD_CALIB_INCIDENT_INTENSITY
+
+       Created PD_CALIB_WAVELENGTH
+
+       Updated _pd_phase.name.
+
+       Created PD_QPA_INTENSITY_FACTOR.
+
+       Updated description of _pd_calibration.conversion_eqn.
+
+       Updated descriptions of PD_CHAR, PD_PREP, and PD_SPEC to clarify
+       differences between 'specimen', 'sample', and 'material'. Updated some
+       data item descriptions to maintain a consistent nomenclature.
+
+       Updated description of _pd_proc.wavelength.
+
+       Remove '_pd_phase_mass_percent' as an alias for '_pd_phase_mass.percent'.
+
+       Added _pd_spec.id and _pd_diffractogram.spec_id.
+
+       Added _pd_proc_ls.diffractogram_id
+
+       Added _pd_peak_overall.id.
+
+       Added child data names of _pd_peak_overall.id to PD_AMORPHOUS,
+       PD_BACKGROUND, and REFLN.
+
+       Created category keys for PD_CHAR and PD_PREP. Added link keys to join
+       PD_CHAR to PD_PREP, and PD_PREP to PD_SPEC.
+
+       Deprecated PD_CALIB, PD_CALIB_OFFSET, and PD_CALIB_STD.
+
+       Deprecated PD_MEAS_INFO_AUTHOR and PD_PROC_INFO_AUTHOR in favour of
+       AUDIT_AUTHOR and AUDIT_AUTHOR_ROLE.
+
+       Add _pd_peak.diffractogram_id.
+
+       Altered PD_CALIB_INCIDENT_INTENSITY to be a Set category.
+
+       Redefined _pd_meas.detector_id in terms of _pd_instr_detector.id. Linked
+       all _pd_*.detector_id data names to _pd_instr_detector.id.
+
+       Switch to using multiblock dictionary as base dictionary.
+
+       Converted all 'Array' and 'Matrix'-type data items to be 'List', except
+       _pd_pref_orient_march_dollase.hkl.
+
+       Change units of _pd_calib_incident_intensity.incident_* to
+       counts_per_second and per_second.
+
+       Clarified description of _pd_meas.rocking_angle.
+
+       Changed the _type.source attribute of all SU data items to 'Related'.
+
+       Added _pd_diffractogram.diffrn_id.
+
+       Updated the CIF_CORE dictionary import statement with the new Head
+       category name.
+
+       Deprecated PD_BLOCK, PD_BLOCK_DIFFRACTOGRAM, PD_PHASE_BLOCK, and all
+       related data items in favour of PD_PHASE and PD_DIFFRACTOGRAM.
+
+       Explicitly deprecated the _pd_refln.wavelength_id and
+       _pd_refln_wavelength_id aliases.
+
+       Set DDL conformance to version 4.2.0.
+
+       Removed default values of _refln.f_complex and _refln.f_squared_meas.
+
+       Added child key data name of _pd_diffractogram.id to refln category.
+       Update refln category keys to match core.
+
+       Added children of _pd_phase.id as key data names of CHEMICAL_*
+       categories.
+
+       Added _pd_phase_mass.absolute and *.original to record absolute
+       mass percentages of phases. Clarified that *.percent was for
+       relative mass percentages only.
+
+       Updated descriptions of data items linked to _pd_data.point_id to
+       clarify that identical values refer to the same data point in each
+       disparate loop; they cannot be assigned values independently.
+
+       Added _pd_instr_detector.instr_id
+
+       Added examples to PD_CALC_OVERALL, PD_CALIB_INCIDENT_INTENSITY, PD_CHAR,
+       PD_DIFFRACTOGRAM, PD_INSTR, PD_INSTR_DETECTOR, PD_MEAS_OVERALL, PD_PEAK,
+       _pd_phase.id, PD_PHASE_MASS, PD_PREP, PD_PROC_LS, PD_PROC_OVERALL,
+       PD_QPA_CALIB_FACTOR, PD_QPA_INTENSITY_FACTOR, PD_QPA_INTERNAL_STD,
+       PD_SPEC.
+
+       Add _pd_peak.peak_overall_id.
+
+       Created _pd_calc.intensity_bkg and updated description of
+       _pd_proc.intensity_bkg_calc.
+
+       Enhanced description of _pd_proc.info_excluded_region.
+
+       PD_CALIB_WAVELENGTH removed. _diffrn_radiation_wavelength.phase_id
+       and _diffrn_radiation_wavelength.diffractogram_id added to record
+       the source of a refined wavelength value.
+       _diffrn_radiation_wavelength.special_details added to record
+       information about the wavelength.
+
+       Added _pd_meas_overall.step_count_time
+
+       Update PD_CALIBRATION with _pd_calibration.diffractogram_id and new
+       key, _pd_calibration.id.
+
+       Update PD_DIFFRACTOGRAM to link to the imgCIF scan from which the
+       diffractogram was created.
+
+       Removed _pd_calib_detected_intensity.id as data item and category
+       key of PD_CALIB_DETECTED_INTENSITY.
+
+       Update PD_INSTR and PD_INSTR_DETECTOR descriptions.
+
+       Added _pd_instr.radiation_id and _pd_instr_detector.instr_id.
+
+       Descriptions of PD_DATA, PD_CALC, PD_MEAS, and PD_PROC updated
+       to make explicit that they can only represent one-dimensional
+       data.
+
+       Update descriptions of _pd_instr.dist* to define distance for
+       non-point detectors and to specify the specimen centre as the
+       point of interest.
+
+       Add _pd_instr_detector.diffrn_detector_id to link a pdCIF to a
+       _diffrn_detector.id detector, particularly for imgCIF.
+
+       Added _pd_meas.channel to explicitly refer to channel number
+       in a diffractogram, rather than requiring _pd_meas.detector_id
+       to fulfill two disparate duties.
+
+       Update description of _pd_instr_detector.id to frown on its use as
+       a channel number descriptor.
+
+       Update description of _pd_meas.detector_id to delegate its use as
+       channel number to _pd_meas.channel. It is still possible to refer
+       to channel numbers here, but not prefered.
+
+       Add _pd_instr_detector.diffrn_id to maintain compatibility with
+       imgCIF for DIFFRN_DETECTOR. This value would not normally be used,
+       as detailing them all would entail repeating all instrument details
+       for all _diffrn.id values. In practice, the value associated with
+       _pd_diffractogram.diffrn_id would be used when looking up this
+       information, where required.
+
+       Update replacements of _pd_calib_std.detector_id.
+
+       Added _pd_phase.density_diffrn, _pd_phase.atten_coef_mu_calc, and
+       _pd_phase.mass_atten_coef_mu_calc.
+
+       Moved _pd_pref_orient_spherical_harmonics.texture_index to
+       _pd_pref_orient.spherical_harmonics_texture_index as it isn't
+       required to loop. Consolidated _pd_pref_orient_march_dollase.geom
+       and _pd_pref_orient_spherical_harmonics.geom to _pd_pref_orient.geom.
+
+       Added _structure.phase_id.
+
+       Fixed imgCIF import head category name. Corrected types of
+       links to _diffrn_scan.id and _diffrn_detector.id.
+
+       Added the _dictionary.licensing_SPDX dictionary attribute.
+
+       Changed the _name.object_id attribute of _pd_instr.beam_size_ax and
+       _pd_instr.beam_size_eq.
+
+       Changed import order of MULTIBLOCK_CORE and CIF_IMG_HEAD such that
+       MULTIBLOCK_CORE is first. This changes the order in which categories
+       are defined so that CIF_IMG_HEAD cannot block definitions in
+       MULTIBLOCK_CORE.
+
+       Added _refln.structure_id as key to REFLN to maintain compatibilty with
+       MULTIBLOCK_CORE.
+
+       Added _pd_proc.d_spacing_perpendicular.
+
+       Renamed dictionary from CIF_POW to CIF_PD and the head category from
+       PD_GROUP to CIF_PD_HEAD.
+
+       Update description of _pd_meas.position to point to modern calibration
+       categories and to allow non-linear calibrations.
+
+       Convert PD_PHASE_MASS to Set category.
+
+       Added _pd_calib_xcoord.detector_id as linked key. Removed
+       _pd_calib_xcoord.xcoord_overall_id as key. Added
+       _pd_instr_detector.xcoord_overall_id as linked non-key data name
+
+       Altered key of pd_qpa_external_std to be _pd_qpa_external_std.instr_id.
+
+       Add DICTIONARY_AUTHOR loop.
+;
