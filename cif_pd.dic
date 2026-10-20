@@ -15,7 +15,7 @@ data_CIF_PD
     _dictionary.title             CIF_PD
     _dictionary.class             Instance
     _dictionary.version           2.5.0
-    _dictionary.date              2026-09-08
+    _dictionary.date              2026-10-20
     _dictionary.uri
 https://raw.githubusercontent.com/COMCIFS/cif_pd/master/cif_pd.dic
     _dictionary.ddl_conformance   4.2.0
@@ -1774,7 +1774,6 @@ save_PD_BLOCK
     _description.text
 ;
     **DEPRECATED**
-
 
     Use _pd_phase.id, _pd_diffractogram.id or _audit.block_code as
     necessary.
@@ -14903,7 +14902,7 @@ save_
 
        Deprecated _pd_refln.wavelength_id after consultation with PDDMG.
 ;
-         2.5.0                    2026-09-08
+         2.5.0                    2026-10-20
 ;
        New categories together with linked identifiers and examples:
        PD_DIFFRACTOGRAM, PD_CALC_COMPONENT, PD_PREF_ORIENT_MARCH_DOLLASE,
