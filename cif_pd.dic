@@ -15,7 +15,7 @@ data_CIF_PD
     _dictionary.title             CIF_PD
     _dictionary.class             Instance
     _dictionary.version           2.5.0
-    _dictionary.date              2026-09-08
+    _dictionary.date              2026-10-20
     _dictionary.uri
 https://raw.githubusercontent.com/COMCIFS/cif_pd/master/cif_pd.dic
     _dictionary.ddl_conformance   4.2.0
@@ -37,8 +37,8 @@ save_CIF_PD_HEAD
     _definition.update            2026-06-19
     _description.text
 ;
-    Groups all of the categories of definitions in the powder
-    diffraction study of materials.
+    The CIF_PD_HEAD category groups all of the categories of
+    definitions in the powder diffraction study of materials.
 ;
     _name.category_id             CIF_PD
     _name.object_id               CIF_PD_HEAD
@@ -64,9 +64,10 @@ save_CHEMICAL
     _definition.update            2012-11-22
     _description.text
 ;
-    The category of data items which describe the composition and
-    chemical properties of the compound under study. The formula data
-    items must be consistent with the density, unit-cell and Z values.
+    Data items in the CHEMICAL category record details about the
+    composition and chemical properties of the compound. The
+    formula data items must be consistent with those that specify the
+    density, unit-cell and Z values.
 ;
     _name.category_id             EXPTL
     _name.object_id               CHEMICAL
@@ -100,11 +101,12 @@ save_CHEMICAL_CONN_ATOM
     _definition.update            2021-06-29
     _description.text
 ;
-    The category of data items which describe the 2D chemical structure of
-    the molecular species. They allow a 2D chemical diagram to be
+    Data items in the CHEMICAL_CONN_ATOM and CHEMICAL_CONN_BOND
+    categories record details about the two-dimensional (2D) chemical
+    structure of the molecular species. They allow a 2D chemical diagram to be
     reconstructed for use in a publication or in a database search
     for structural and substructural relationships. In particular,
-    the chemical_conn_atom data items provide information about the
+    the CHEMICAL_CONN_ATOM data items provide information about the
     chemical properties of the atoms in the structure. In cases
     where crystallographic and molecular symmetry elements coincide
     they must also contain symmetry-generated atoms, so as to describe
@@ -147,8 +149,8 @@ save_CHEMICAL_CONN_BOND
     _definition.update            2021-06-29
     _description.text
 ;
-    The category of data items which specify the connections between
-    the atom sites in the CHEMICAL_CONN_ATOM list and the nature
+    Data items in the CHEMICAL_CONN_BOND category specify the connections
+    between the atom sites in the CHEMICAL_CONN_ATOM list and the nature
     of the chemical bond between these atoms. These are details about
     the two-dimensional (2D) chemical structure of the molecular species.
     They allow a 2D chemical diagram to be reconstructed for use in a
@@ -193,34 +195,34 @@ save_CHEMICAL_FORMULA
     _definition.update            2023-01-13
     _description.text
 ;
-    The category of data items which specify the composition and chemical
-    properties of the compound. The formula data items must agree
+    Data items in the CHEMICAL_FORMULA category specify the composition and
+    chemical properties of the compound. The formula data items must agree
     with those that specify the density, unit-cell and Z values.
 
     The following rules apply to the construction of the data items
     _chemical_formula.analytical, *.structural and *.sum. For the
     data item *.moiety the formula construction is broken up into
     residues or moieties, i.e. groups of atoms that form a molecular
-    unit or molecular ion. The rules given below apply within each
+    unit or molecular ion. The general rules given below apply within each
     moiety, but different requirements apply to the way that moieties
     are connected (see _chemical_formula.moiety).
 
-    1. Only recognized element symbols may be used.
+    (1) Only recognized element symbols may be used.
 
-    2. Each element symbol is followed by a 'count' number. A count of
+    (2) Each element symbol is followed by a 'count' number. A count of
        '1' may be omitted.
 
-    3. A space or parenthesis must separate each cluster of (element
+    (3) A space or parenthesis must separate each cluster of (element
        symbol + count).
 
-    4. Where a group of elements is enclosed in parentheses, the
+    (4) Where a group of elements is enclosed in parentheses, the
        multiplier for the group must follow the closing parentheses.
        That is, all element and group multipliers are assumed to be
        printed as subscripted numbers. [An exception to this rule
        exists for *.moiety formulae where pre- and post-multipliers
        are permitted for molecular units].
 
-    5. Unless the elements are ordered in a manner that corresponds to
+    (5) Unless the elements are ordered in a manner that corresponds to
        their chemical structure, as in _chemical_formula.structural,
        the order of the elements within any group or moiety
        depends on whether or not carbon is present. If carbon is
@@ -230,16 +232,24 @@ save_CHEMICAL_FORMULA
        of their symbol. This is the 'Hill' system used by Chemical
        Abstracts. This ordering is used in _chemical_formula.moiety
        and _chemical_formula.sum.
-
-          _chemical_formula.IUPAC      '[Mo (C O)4 (C18 H33 P)2]'
-          _chemical_formula.moiety     'C40 H66 Mo O4 P2'
-          _chemical_formula.structural '((C O)4 (P (C6 H11)3)2)Mo'
-          _chemical_formula.sum         'C40 H66 Mo O4 P2'
-          _chemical_formula.weight      768.81
 ;
     _name.category_id             CHEMICAL
     _name.object_id               CHEMICAL_FORMULA
     _category_key.name            '_chemical_formula.phase_id'
+
+    _description_example.case
+;
+       _chemical_formula.IUPAC      '[Mo (C O)4 (C18 H33 P)2]'
+       _chemical_formula.moiety     'C40 H66 Mo O4 P2'
+       _chemical_formula.structural '((C O)4 (P (C6 H11)3)2)Mo'
+       _chemical_formula.sum         'C40 H66 Mo O4 P2'
+       _chemical_formula.weight      768.81
+;
+    _description_example.detail
+;
+       Based on data set 9597gaus of Alyea, Ferguson & Kannan
+       [Acta Cryst. (1996), C52, 765-767].
+;
 
 save_
 
@@ -1764,6 +1774,7 @@ save_PD_BLOCK
     _description.text
 ;
     **DEPRECATED**
+
     Use _pd_phase.id, _pd_diffractogram.id or _audit.block_code as
     necessary.
 
@@ -1812,6 +1823,7 @@ save_pd_block.id
     _description.text
 ;
     **DEPRECATED**
+
     Use _pd_phase.id, _pd_diffractogram.id or _audit.block_code,
     as necessary.
 
@@ -1904,6 +1916,7 @@ save_PD_BLOCK_DIFFRACTOGRAM
     _description.text
 ;
      **DEPRECATED**
+
     Use _pd_diffractogram.id, as necessary.
 
     A number of diffractograms may contribute to the
@@ -1927,6 +1940,7 @@ save_pd_block_diffractogram.id
     _description.text
 ;
     **DEPRECATED**
+
     Use _pd_diffractogram.id, as necessary.
 
     A block ID code (see _pd_block.id) that identifies
@@ -2282,6 +2296,7 @@ save_PD_CALIB
     _description.text
 ;
     **DEPRECATED**
+
     Please see PD_CALIB_DETECTED_INTENSITY and PD_QPA_INTERNAL_STD.
 
     This section defines the parameters used for the calibration
@@ -2308,6 +2323,7 @@ save_pd_calib.detector_id
     _description.text
 ;
     **DEPRECATED**
+
     Please see _pd_calib_detected_intensity.detector_id.
 
     A code which identifies the detector or channel number in a
@@ -2337,6 +2353,7 @@ save_pd_calib.detector_response
     _description.text
 ;
     **DEPRECATED**
+
     Please see _pd_calib_detected_intensity.detector_response.
 
     A value that indicates the relative sensitivity of each
@@ -2365,6 +2382,7 @@ save_pd_calib.detector_response_su
     _description.text
 ;
     **DEPRECATED**
+
     Please see _pd_calib_detected_intensity.detector_response_su.
 
     Standard uncertainty of _pd_calib.detector_response.
@@ -2387,6 +2405,7 @@ save_pd_calib.std_internal_mass_percent
     _description.text
 ;
     **DEPRECATED**
+
     Please see _pd_qpa_internal_std.mass_percent.
 
     Per cent presence of the internal standard specified by the
@@ -2414,6 +2433,7 @@ save_pd_calib.std_internal_mass_percent_su
     _description.text
 ;
     **DEPRECATED**
+
     Please see _pd_qpa_internal_std.mass_percent_su.
 
     Standard uncertainty of _pd_calib.std_internal_mass_percent.
@@ -2437,6 +2457,7 @@ save_pd_calib.std_internal_name
     _description.text
 ;
     **DEPRECATED**
+
     Please see PD_QPA_INTERNAL_STD for alternative methods of identifying
     an internal standard.
 
@@ -3126,6 +3147,7 @@ save_PD_CALIB_OFFSET
     _description.text
 ;
     **DEPRECATED**
+
     Please see PD_CALIB_XCOORD and PD_CALIB_XCOORD_OVERALL.
 
     Data items in this category define an offset angle (in degrees)
@@ -3164,6 +3186,7 @@ save_pd_calib.2theta_off_max
     _description.text
 ;
     **DEPRECATED**
+
     Please see PD_CALIB_XCOORD. In general, calibrations are now carried
     out over the given range, removing the need to explicitly provide
     minima and maxima.
@@ -3194,6 +3217,7 @@ save_pd_calib.2theta_off_min
     _description.text
 ;
     **DEPRECATED**
+
     Please see PD_CALIB_XCOORD. In general, calibrations are now carried
     out over the given range, removing the need to explicitly provide
     minima and maxima.
@@ -3224,6 +3248,7 @@ save_pd_calib.2theta_off_point
     _description.text
 ;
     **DEPRECATED**
+
     Please see _pd_calib_xcoord.nominal_2theta.
 
     The nominal 2θ value to which the offset given in
@@ -3252,6 +3277,7 @@ save_pd_calib.2theta_offset
     _description.text
 ;
     **DEPRECATED**
+
     Please see _pd_calib_xcoord.actual_2theta.
 
     _pd_calib.2theta_offset defines an offset angle (in degrees)
@@ -3282,6 +3308,7 @@ save_pd_calib.2theta_offset_su
     _description.text
 ;
     **DEPRECATED**
+
     Please see _pd_calib_xcoord.actual_2theta_su.
 
     Standard uncertainty of _pd_calib.2theta_offset.
@@ -3306,6 +3333,7 @@ save_pd_calib_offset.detector_id
     _description.text
 ;
     **DEPRECATED**
+
     Please see _pd_calib_xcoord.detector_id.
 
     The detector to which the offset values relate.
@@ -3334,6 +3362,7 @@ save_pd_calib_offset.id
     _description.text
 ;
     **DEPRECATED**
+
     Please see _pd_calib_xcoord.id.
 
     An arbitrary code which identifies a particular 2θ offset
@@ -3361,6 +3390,7 @@ save_PD_CALIB_STD
     _description.text
 ;
     **DEPRECATED**
+
     Please see PD_CALIB_DETECTED_INTENSITY, PD_CALIB_INCIDENT_INTENSITY,
     PD_CALIB_XCOORD_OVERALL and DIFFRN_RADIATION_WAVELENGTH.
 
@@ -3401,6 +3431,7 @@ save_pd_calib_std.detector_id
     _description.text
 ;
     **DEPRECATED**
+
     Please see _pd_calib_detected_intensity.detector_id,
     _pd_calib_xcoord.detector_id or _pd_calib_xcoord.nominal_channel, as
     necessary.
@@ -3440,6 +3471,7 @@ save_pd_calib_std.external_block_id
     _description.text
 ;
     **DEPRECATED**
+
     Please see:
       _pd_calib_detected_intensity.diffractogram_id
       _pd_calib_incident_intensity.diffractogram_id
@@ -3473,6 +3505,7 @@ save_pd_calib_std.external_name
     _description.text
 ;
     **DEPRECATED**
+
     Please see:
       PD_CALIB_DETECTED_INTENSITY
       PD_CALIB_INCIDENT_INTENSITY
@@ -9058,6 +9091,7 @@ save_PD_MEAS_INFO_AUTHOR
     _description.text
 ;
     **DEPRECATED**
+
     Please see AUDIT_AUTHOR and AUDIT_AUTHOR_ROLE.
 
     This section contains information about the person(s)
@@ -9084,6 +9118,7 @@ save_pd_meas_info_author.address
     _description.text
 ;
     **DEPRECATED**
+
     Please see _audit_author.address and _audit_author_role.role.
 
     The address of the person who measured the data set. If there
@@ -9114,6 +9149,7 @@ save_pd_meas_info_author.email
     _description.text
 ;
     **DEPRECATED**
+
     Please see _audit_author.email and _audit_author_role.role.
 
     The e-mail address of the person who measured the data set. If
@@ -9144,6 +9180,7 @@ save_pd_meas_info_author.fax
     _description.text
 ;
     **DEPRECATED**
+
     Please see _audit_author.fax and _audit_author_role.role.
 
     The fax number of the person who measured the data set. If
@@ -9176,6 +9213,7 @@ save_pd_meas_info_author.name
     _description.text
 ;
     **DEPRECATED**
+
     Please see _audit_author.name and _audit_author_role.role.
 
     The name of the person who measured the data set. The family
@@ -9207,6 +9245,7 @@ save_pd_meas_info_author.phone
     _description.text
 ;
     **DEPRECATED**
+
     Please see _audit_author.phone and _audit_author_role.role.
 
     The telephone number of the person who measured the data set.
@@ -10550,6 +10589,7 @@ save_PD_PHASE_BLOCK
     _description.text
 ;
     **DEPRECATED**
+
     Use _pd_phase.id, as necessary.
 
     A table of phases relevant to the current data
@@ -10574,6 +10614,7 @@ save_pd_phase_block.id
     _description.text
 ;
     **DEPRECATED**
+
     Use _pd_phase.id, as necessary.
 
     A block ID code identifying a block containing phase information.
@@ -11986,6 +12027,7 @@ save_PD_PROC_INFO_AUTHOR
     _description.text
 ;
     **DEPRECATED**
+
     Please see AUDIT_AUTHOR and AUDIT_AUTHOR_ROLE.
 
     This section contains information about the person(s)
@@ -12012,6 +12054,7 @@ save_pd_proc_info_author.address
     _description.text
 ;
     **DEPRECATED**
+
     Please see _audit_author.address and _audit_author_role.role.
 
     The address of the person who processed the data.
@@ -12042,6 +12085,7 @@ save_pd_proc_info_author.email
     _description.text
 ;
     **DEPRECATED**
+
     Please see _audit_author.email and _audit_author_role.role.
 
     The e-mail address of the person who processed the
@@ -12072,6 +12116,7 @@ save_pd_proc_info_author.fax
     _description.text
 ;
     **DEPRECATED**
+
     Please see _audit_author.fax and _audit_author_role.role.
 
     The fax number of the person who processed the data.
@@ -12104,6 +12149,7 @@ save_pd_proc_info_author.name
     _description.text
 ;
     **DEPRECATED**
+
     Please see _audit_author.name and _audit_author_role.role.
 
     The name of the person who processed the data, if different
@@ -12136,6 +12182,7 @@ save_pd_proc_info_author.phone
     _description.text
 ;
     **DEPRECATED**
+
     Please see _audit_author.phone and _audit_author_role.role.
 
     The telephone number of the person who processed the data.
@@ -12346,6 +12393,7 @@ save_pd_proc_ls.pref_orient_corr
     _description.text
 ;
     **DEPRECATED**.
+
     Use _pd_pref_orient.special_details, or if
     the correction can be described as a March-Dollase
     or spherical harmonics correction, use
@@ -14595,7 +14643,7 @@ save_REFLN
     _definition.update            2026-05-19
     _description.text
 ;
-    The category of data items used to describe the reflection data
+    Data items in the REFLN category describe the reflection data
     used in the refinement of one or more crystallographic phases.
 ;
     _name.category_id             DIFFRACTION
@@ -14854,7 +14902,7 @@ save_
 
        Deprecated _pd_refln.wavelength_id after consultation with PDDMG.
 ;
-         2.5.0                    2026-09-08
+         2.5.0                    2026-10-20
 ;
        New categories together with linked identifiers and examples:
        PD_DIFFRACTOGRAM, PD_CALC_COMPONENT, PD_PREF_ORIENT_MARCH_DOLLASE,
