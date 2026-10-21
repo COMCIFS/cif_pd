@@ -553,7 +553,7 @@ save_PD_BACKGROUND
 ;
          Corresponds to a 3rd-order Chebyshev polynomial with the zeroth-
          through third-order coefficients having the values 4.219, 25.114,
-         -10.012, and 6.720. Each value has a standard uncertainty of 1.30,
+         -10.012 and 6.720. Each value has a standard uncertainty of 1.30,
          1.62, 1.02 and 0.66, respectively.
 ;
 ;
@@ -596,7 +596,7 @@ save_PD_BACKGROUND
          Corresponds to the linear combination of a 3rd-order Chebyshev
          polynomial with a standard polynomial background.
 
-         The Chebyshev polynomial coefficients are 4.219, 25.114, -10.012, and
+         The Chebyshev polynomial coefficients are 4.219, 25.114, -10.012 and
          6.720. The standard polynomial equation is
              bkg = 1049.69/X + 5016.63/X^2^
 
@@ -624,11 +624,11 @@ save_pd_background.air_or_thermal_diffuse_coef_1
         bkg = Sum( C1~j~ * (q^2*j^/j!) + C2~j~ * (j!/q^2*j^), j=0:N)
 
     where C1 and C2 represent _pd_background.air_or_thermal_diffuse_coef_1 and
-    coef_2, respectively, j is the order of the equation as given in
+    *_coef_2, respectively, j is the order of the equation as given in
     _pd_background.air_or_thermal_diffuse_order, and q is the magnitude of the
     diffraction vector, defined as
 
-        q = 4πsin(θ)/λ
+        q = 4π(sin θ)/λ
 
     where θ is the diffraction angle and λ is the wavelength of the
     incident radiation in angstroms.
@@ -679,11 +679,11 @@ save_pd_background.air_or_thermal_diffuse_coef_2
         bkg = Sum( C1~j~ * (q^2*j^/j!) + C2~j~ * (j!/q^2*j^), j=0:N)
 
     where C1 and C2 represent _pd_background.air_or_thermal_diffuse_coef_1 and
-    coef_2, respectively, j is the order of the equation as given in
+    *_coef_2, respectively, j is the order of the equation as given in
     _pd_background.air_or_thermal_diffuse_order, and q is the magnitude of the
     diffraction vector, defined as
 
-        q = 4πsin(θ)/λ
+        q = 4π(sin θ)/λ
 
     where θ is the diffraction angle and λ is the wavelength of the
     incident radiation in angstroms.
@@ -825,7 +825,7 @@ save_pd_background.air_or_thermal_diffuse_order
     The value of an order used in an equation representing the
     background due to thermal diffuse scattering and/or air scattering, in a
     calculated diffractogram. Must be given with
-    _pd_background.air_or_thermal_diffuse_coef_1 and coef_2 values.
+    _pd_background.air_or_thermal_diffuse_coef_1 and *_coef_2 values.
 
     The background equation is of the form:
 
@@ -836,7 +836,7 @@ save_pd_background.air_or_thermal_diffuse_order
     _pd_background.air_or_thermal_diffuse_order, and q is the magnitude of the
     diffraction vector, defined as
 
-        q = 4πsin(θ)/λ
+        q = 4π(sin θ)/λ
 
     where θ is the diffraction angle and λ is the wavelength of the
     incident radiation in angstroms.
@@ -867,14 +867,14 @@ save_pd_background.chebyshev_coef
 
         T~0~(x) = 1
         T~1~(x) = x
-        T~n+1~(x) = 2 * x * T~n~(x) - T~n-1~(x).
+        T~n+1~(x) = 2 * x * T~n~(x) - T~n-1~(x)
 
     where n represents the order of the polynomial, and x is the X coordinate in
     which the diffractogram was calculated, normalized to the range -1:1.
 
     The background equation using Chebyshev polynomials is of the form:
 
-        bkg = Sum( coef * T~n~(x))
+        bkg = Sum( coef * T~n~(x)).
 ;
     _name.category_id             pd_background
     _name.object_id               Chebyshev_coef
@@ -964,14 +964,14 @@ save_pd_background.chebyshev_order
 
         T~0~(x) = 1
         T~1~(x) = x
-        T~n+1~(x) = 2 * x * T~n~(x) - T~n-1~(x).
+        T~n+1~(x) = 2 * x * T~n~(x) - T~n-1~(x)
 
     where n represents the order of the polynomial, and x is the X coordinate in
     which the diffractogram was calculated, normalized to the range -1:1.
 
     The background equation using Chebyshev polynomials is of the form:
 
-        bkg = Sum( coef * T~n~(x))
+        bkg = Sum( coef * T~n~(x)).
 ;
     _name.category_id             pd_background
     _name.object_id               Chebyshev_order
@@ -1126,7 +1126,7 @@ save_pd_background.debye_diffuse_amp
 
     and where q is the magnitude of the diffraction vector, defined as
 
-        q = 4πsin(θ)/λ
+        q = 4π(sin θ)/λ
 
     where θ is the diffraction angle and λ is the wavelength of the
     incident radiation in angstroms.
@@ -1177,7 +1177,7 @@ save_pd_background.debye_diffuse_displace
 
     and where q is the magnitude of the diffraction vector, defined as
 
-        q = 4πsin(θ)/λ
+        q = 4π(sin θ)/λ
 
     where θ is the diffraction angle and λ is the wavelength of the
     incident radiation in angstroms.
@@ -1228,7 +1228,7 @@ save_pd_background.debye_diffuse_dist
 
     and where q is the magnitude of the diffraction vector, defined as
 
-        q = 4πsin(θ)/λ
+        q = 4π(sin θ)/λ
 
     where θ is the diffraction angle and λ is the wavelength of the
     incident radiation in angstroms.
@@ -1354,7 +1354,7 @@ save_pd_background.line_segment_intensity
     It is intended that at least two X,Y coordinate pairs are given, and that
     the line segments between them form the background function.
 
-    The value of the background function at a point x, is of the form:
+    The value of the background function at a point x is of the form:
 
                (intensity_2 - intensity_1)
         bkg =  --------------------------- * (x - X_1) + intensity_1
@@ -1408,7 +1408,7 @@ save_pd_background.line_segment_x
     It is intended that at least two X,Y coordinate pairs are given, and that
     the line segments between them form the background function.
 
-    The value of the background function at a point x, is of the form:
+    The value of the background function at a point x is of the form:
 
                (intensity_2 - intensity_1)
         bkg =  --------------------------- * (x - X_1) + intensity_1
@@ -1512,7 +1512,7 @@ save_pd_background.polynomial_coef
 
         bkg = Sum( coef * X_coord ^ power)
 
-    where the X coordinate is coordinate in which the diffractogram was
+    where the X coordinate is the coordinate in which the diffractogram was
     calculated.
 ;
     _name.category_id             pd_background
@@ -1602,7 +1602,7 @@ save_pd_background.polynomial_power
 
         bkg = Sum( coef * X_coord ^ power)
 
-    where the X coordinate is coordinate in which the diffractogram was
+    where the X coordinate is the coordinate in which the diffractogram was
     calculated.
 ;
     _name.category_id             pd_background
@@ -1824,7 +1824,7 @@ save_pd_block.id
 ;
     **DEPRECATED**
 
-    Use _pd_phase.id, _pd_diffractogram.id or _audit.block_code,
+    Use _pd_phase.id, _pd_diffractogram.id or _audit.block_code
     as necessary.
 
     Used to assign a unique character string to a block.
@@ -2197,7 +2197,7 @@ save_PD_CALC_OVERALL
 ;
          Tabulation of diffraction data consisting of measured and
          calculated data, where the calculated data were calculated by the
-         Rietveld method. The calculated data also includes intensities
+         Rietveld method. The calculated data also include intensities
          ascribed to the different phases which make up the model. The phases
          to which the intensities belong are given by the value of
          _pd_calc_overall.component_presentation_order. These values correspond
@@ -2253,7 +2253,7 @@ save_pd_calc_overall.component_presentation_order
     _description.text
 ;
     List of _pd_phase.id values specifying the order in which
-    the individual phases' calculated components are given
+    calculated components of the individual phases are given
     within _pd_calc.component_intensities_*.
 ;
     _name.category_id             pd_calc_overall
@@ -2410,7 +2410,7 @@ save_pd_calib.std_internal_mass_percent
 
     Per cent presence of the internal standard specified by the
     data item _pd_calib.std_internal_name expressed as 100 times
-    the mass of standard added divided by the sum of the mass of
+    the mass of standard added, divided by the sum of the mass of
     standard added and the original sample mass.
 ;
     _name.category_id             pd_calib
@@ -2977,11 +2977,11 @@ save_PD_CALIB_INCIDENT_INTENSITY
         # ...
 ;
 ;
-        The measured intensities for the diffractogram "WHITE_POWDER"
-        collected on the instrument "a3643812" have been processed to
+        The measured intensities for the diffractogram WHITE_POWDER
+        collected on the instrument a3643812 have been processed to
         give the normalized intensity at each point in the scan using
         the incident intensity calibration linked to that instrument.
-        The SU values have also been calculated for the
+        The s.u. values have also been calculated for the
         _pd_proc.intensity_total values.
 
         Identical _audit_dataset.id value show that the identical
@@ -3125,7 +3125,7 @@ save_pd_calib_incident_intensity.special_details
     _description.text
 ;
     Description of intensity calibration details that cannot otherwise be
-    recorded using other PD_CALIB_INCIDENT_INTENSITY data items
+    recorded using other PD_CALIB_INCIDENT_INTENSITY data items.
 ;
     _name.category_id             pd_calib_incident_intensity
     _name.object_id               special_details
@@ -3551,9 +3551,9 @@ save_PD_CALIB_XCOORD
 
     This mapping would usually be used to correct for systematic errors in
     the X-coordinate axis, such as those caused by miscalibration of the
-    instrument, eg mapping measured 2\q values to corrected 2\q values, or to
+    instrument, eg mapping measured 2θ values to corrected 2θ values, or to
     provide a calibration for mapping a detector channel number to an actual
-    detected energy, d-spacing, or momentum transfer value.
+    detected energy, d-spacing or momentum transfer value.
 
     In general, any number of nominal-to-actual calibrations could be
     provided. Each line in the loop fixes the mapping from a nominal
@@ -3561,7 +3561,7 @@ save_PD_CALIB_XCOORD
     of values that would otherwise be given in a human-readable equation
     in _pd_calibration.conversion_eqn.
 
-    Every datapoint in a diffractogram to be calibrated may not have an
+    Every data point in a diffractogram to be calibrated may not have an
     equivalent value in the calibration table. In this case, an
     interpolation must be made to obtain a value for each data point.
 
@@ -3656,7 +3656,7 @@ save_PD_CALIB_XCOORD
          The data block "unknownsample" contains a diffractogram
          identified as "UNKNOWN_DIFFRACTOGRAM", which was collected on the
          same instrument, "INSTRUMENT_1". The combination of instrument id,
-         detector id, and xcood_overall id identifies the applicable
+         detector id, and xcoord_overall id identifies the applicable
          calibration information.
 ;
 ;
@@ -3701,10 +3701,10 @@ save_PD_CALIB_XCOORD
          time-of-flight. The measured TOF and processed d-spacing values
          from the resultant analysis are taken as the nominal and actual
          values, respectively, for the calibration. This calibration is
-         available for reuse for data collected on this instrument and
+         available for re-use for data collected on this instrument and
          detectors.
 
-         The _audit_dataset.id values show the datasets for which the
+         The _audit_dataset.id values show the data sets for which the
          calibration is valid.
 ;
 ;
@@ -3740,7 +3740,7 @@ save_pd_calib_xcoord.actual_2theta
     _definition.update            2025-06-19
     _description.text
 ;
-    The actual 2\q value to which the equivalent looped nominal
+    The actual 2θ value to which the equivalent looped nominal
     value applies as given by _pd_calib_xcoord.nominal_*.
 
     That is, this provides a mapping between the aforementioned actual
@@ -4089,7 +4089,7 @@ save_pd_calib_xcoord.id
     _definition.update            2023-01-17
     _description.text
 ;
-    A arbitrary code to uniquely identify each X-coordinate calibration.
+    An arbitrary code to uniquely identify each X-coordinate calibration.
 ;
     _name.category_id             pd_calib_xcoord
     _name.object_id               id
@@ -4106,7 +4106,7 @@ save_pd_calib_xcoord.nominal_2theta
     _definition.update            2025-06-19
     _description.text
 ;
-    The nominal 2\q value to which the equivalent looped actual
+    The nominal 2θ value to which the equivalent looped actual
     value applies as given by _pd_calib_xcoord.actual_*.
 
     That is, this provides a mapping between the aforementioned nominal
@@ -4641,7 +4641,7 @@ save_pd_char.atten_coef_mu_calc
     of inverse millimetres, also known as the linear absorption
     coefficient. The value is obtained from the atomic content of
     each of the phases in the material, the average density
-    (allowing for packing density), and the radiation wavelength.
+    (allowing for packing density) and the radiation wavelength.
     Note that _pd_char.atten_coef_mu_calc will differ from the value
     based on phase quantities and _exptl_absorpt.coefficient_mu for
     each phase if the packing density is not unity.
@@ -4982,7 +4982,7 @@ save_PD_DATA
          calculated data. The measured time-of-flight is given along with the
          corresponding d values; The parameters for this conversion may be
          given elsewhere using PD_CALIB_D_TO_TOF data items. The measured
-         intensity is not given, only the processed intensity is listed. The
+         intensity is not given; only the processed intensity is listed. The
          weighting associated with each data point in the diffraction pattern
          modelling process is given, along with the calculated intensity and
          background.
@@ -5006,7 +5006,7 @@ save_PD_DATA
          1   4.03625   3.944633   1053.9   1074.628
          2   4.07375   3.982134   1060.2   1072.667
          3   4.11125   4.019635   1017.3   1070.768
-         #further data points follow
+         # further data points follow
 ;
 ;
          Tabulation of diffraction data consisting of measured, processed and
@@ -5018,7 +5018,7 @@ save_PD_DATA
 
          The category key value associated with _pd_data.point_id is given
          with every data point. In the usual case that only one diffractogram
-         is present in the data block, the category-key value associated with
+         is present in the data block, the category key value associated with
          _pd_data.diffractogram_id would be taken from the value associated
          with the data name _pd_diffractogram.id given in that data block.
 ;
@@ -5033,7 +5033,7 @@ save_PD_DATA
          2   4.09   140
          3   4.15   134
          4   4.21   171
-         #further data points follow
+         # further data points follow
 ;
 ;
          Tabulation of diffraction data consisting only of measured data. The
@@ -5042,7 +5042,7 @@ save_PD_DATA
 
          The category key value associated with _pd_data.point_id is given
          with every data point. In the usual case that only one diffractogram
-         is present in the data block, the category-key value associated with
+         is present in the data block, the category key value associated with
          _pd_data.diffractogram_id would be taken from the value associated
          with the data name _pd_diffractogram.id given in that data block.
 ;
@@ -5108,7 +5108,7 @@ save_PD_CALC
     Rietveld refinement.
 
     The intensities contained within PD_CALC represent one-dimensional
-    datasets, that is, intensity as a function of _pd_calc.point_id,
+    data sets, that is, intensity as a function of _pd_calc.point_id,
     2θ, d-spacing, time-of-flight, position or other applicable
     diffraction-related coordinate. Intensities can be assigned to each
     data point through the equivalent *.point_id in PD_MEAS or PD_PROC.
@@ -5133,7 +5133,7 @@ save_PD_CALC
          2   26.200290   26.200290
          3   26.404083   26.404083
          4   26.606346   26.606346
-         #further data points follow
+         # further data points follow
 ;
     _description_example.detail
 ;
@@ -5141,7 +5141,7 @@ save_PD_CALC
          intensity, including background, and the calculated background.
 
          The category key value associated with _pd_data.point_id is given
-         with every data point. The x-coordinate associated with each point
+         with every data point. The X-coordinate associated with each point
          would be given in the appropratiate _pd_meas.* or _pd_proc.* loop.
          Calculated data are normally presented with measured and processed
          data in a single loop.
@@ -5175,7 +5175,7 @@ save_pd_calc.component_intensities_net
     _pd_proc.intensity_net values.
 
     _pd_calc.component_intensities_* should be looped with
-    either _pd_proc.intensity_net, _pd_meas.counts_*, and/or
+    either _pd_proc.intensity_net, _pd_meas.counts_* and/or
     _pd_meas.intensity_*.
 
     See also _pd_calc_component.intensity_net.
@@ -5216,7 +5216,7 @@ save_pd_calc.component_intensities_total
     or _pd_meas.intensity_*).
 
     _pd_calc.component_intensities_* should be looped with
-    either _pd_proc.intensity_net, _pd_meas.counts_*, and/or
+    either _pd_proc.intensity_net, _pd_meas.counts_* and/or
     _pd_meas.intensity_*.
 
     See also _pd_calc_component.intensity_total.
@@ -6344,7 +6344,7 @@ save_pd_proc.d_spacing
     _description.text
 ;
     d-spacing corresponding to an intensity point
-    from Bragg's law, d = λ/(2 sinθ), in units of angstroms.
+    from Bragg's law, d = λ/(2 sin θ), in units of angstroms.
 ;
     _name.category_id             pd_proc
     _name.object_id               d_spacing
@@ -14846,12 +14846,9 @@ save_
          1         'Toby, Brian'                .                           .
          2         'Hall, Sydney R.'            .                           .
          3         'Brown, I. David.'           .                           .
-         4         'McMahon, Brian'             0000-0003-0391-0002         .
-         5         'Langford, Ian'              .                           .
-         6         'Hester, James R.'           0000-0002-2004-8672         .
-         7         'Vaitkus, Antanas'           0000-0002-5944-1391         .
-         8         'Rowles, Matthew R.'         0000-0002-7448-6774         .
-         9         'Schriener, Walter'          .                           .
+         4         'Hester, James R.'           0000-0002-2004-8672         .
+         5         'Vaitkus, Antanas'           0000-0002-5944-1391         .
+         6         'Rowles, Matthew R.'         0000-0002-7448-6774         .
 
     loop_
       _dictionary_audit.version
