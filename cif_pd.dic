@@ -9929,10 +9929,10 @@ save_PD_PEAK
          _pd_diffractogram.id        PEAKYPLOT
          _pd_diffractogram.instr_id  Cu_workhorse
 
-         _pd_instr.id            Cu_workhorse
-         _pd_instr.radiation_id  Cu_tube
+         _pd_instr.id                Cu_workhorse
+         _pd_instr.radiation_id      Cu_tube
 
-         _diffrn_radiation.id  Cu_tube
+         _diffrn_radiation.id        Cu_tube
 
          loop_
          _diffrn_radiation_wavelength.id
@@ -10541,7 +10541,7 @@ save_pd_phase.mass_atten_coef_mu_calc
 ;
     The calculated mass attenuation coefficient, μ^*^, in units of square
     millimetres per gram, also known as the mass absorption coefficient. The
-    calculated μ^*^ will be obtained from the atomic content the phase and
+    calculated μ^*^ will be obtained from the atomic content of the phase and
     the radiation wavelength.
 ;
     _name.category_id             pd_phase
@@ -10715,7 +10715,7 @@ save_PD_PHASE_MASS
          _pd_phase_mass.percent  17.13(53)
 ;
 ;
-         Identical as previous example, but values distributed amongst
+         Same data as in previous example, but values distributed amongst
          blocks so as to maintain the default value of _audit.schema.
          This is the preferred methodology.
 ;
@@ -10773,7 +10773,7 @@ save_PD_PHASE_MASS
          _pd_phase_mass.original  15.26
 ;
 ;
-         As for previous example, but with a block structure conforming with
+         As for previous example, but with a block structure conforming to
          the default _audit.schema.
 ;
 
@@ -10805,7 +10805,9 @@ save_pd_phase_mass.absolute
 
     See also _pd_phase_mass.original.
 
-    See Rowles (2024) Powder Diffr. 39(4), 224-226, for further discussion.
+    See Rowles (2024) for further discussion.
+
+    Reference: Rowles, M. R. (2024). Powder Diffr. 39, 224-226.
 ;
     _name.category_id             pd_phase_mass
     _name.object_id               absolute
@@ -10879,7 +10881,9 @@ save_pd_phase_mass.original
 
     See also _pd_phase_mass.absolute.
 
-    See Rowles (2024) Powder Diffr. 39(4), 224-226, for further discussion.
+    See Rowles (2024) for further discussion.
+
+    Reference: Rowles, M. R. (2024). Powder Diffr. 39, 224-226.
 ;
     _name.category_id             pd_phase_mass
     _name.object_id               original
@@ -10987,7 +10991,7 @@ save_PD_PREF_ORIENT
     March-Dollase and spherical harmonics corrections can be given explicitly.
     See PD_PREF_ORIENT_MARCH_DOLLASE and PD_PREF_ORIENT_SPHERICAL_HARMONICS.
 
-    For other methods, use the _pd_pref_orient.special_details.
+    For other methods, use _pd_pref_orient.special_details.
 ;
     _name.category_id             CIF_PD_HEAD
     _name.object_id               PD_PREF_ORIENT
@@ -11005,8 +11009,8 @@ save_pd_pref_orient.diffractogram_id
     _definition.update            2023-01-12
     _description.text
 ;
-    The diffractogram (see _pd_diffractogram.id) to which the preferred-
-    orientation correction relates.
+    The diffractogram (see _pd_diffractogram.id) to which the
+    preferred-orientation correction relates.
 ;
     _name.category_id             pd_pref_orient
     _name.object_id               diffractogram_id
@@ -11030,12 +11034,13 @@ save_pd_pref_orient.geom
     The functional form of the March-Dollase or spherical harmonics
     correction depends on whether the data were collected in symmetric
     or asymmetric reflection or transmission, or capillary geometries.
-    See Section 3, Rowles, M. R. & Buckley, C. E. (2017),
-    J. Appl. Cryst. 50, 240-251, for further discussion.
+    See Section 3 of Rowles & Buckley (2017) for further discussion.
 
     In most Rietveld software, 'symmetric reflection' is the
     default implementation.
 
+    Reference: Rowles, M. R. and Buckley, C. E. (2017).
+    J. Appl. Cryst. 50, 240-251.
 ;
     _name.category_id             pd_pref_orient
     _name.object_id               geom
@@ -11120,16 +11125,16 @@ save_pd_pref_orient.spherical_harmonics_texture_index
     _description.text
 ;
     The texture index, derived from spherical harmonics coefficients
-    as described by equation 4.212 in Bunge, as
+    as described by equation 4.212 in Bunge (1982), as
 
     T = sum_{i,j} [c_{i,j}^2 / (2i+1)].
 
     It gives the value [1, ∞), where 1 is a random powder
     and ∞ is an ideal single crystal.
 
-    Bunge, H.J., (2015) 'Texture Analysis in Materials Science:
-    Mathematical Methods', Helga and Hans-Peter Bunge,
-    Wolfratshausen.
+    Reference: Bunge, H.J. (1982) 'Texture Analysis in Materials Science:
+    Mathematical Methods'. London: Butterworth & Co.
+    http://ebsd.info/pdf/Bunge_TextureAnalysis.pdf
 ;
     _name.category_id             pd_pref_orient
     _name.object_id               spherical_harmonics_texture_index
@@ -11187,8 +11192,9 @@ save_PD_PREF_ORIENT_MARCH_DOLLASE
     PD_PREF_ORIENT_SPHERICAL_HARMONICS. For other methods,
     use _pd_pref_orient.special_details.
 
-    See Dollase, W. A. (1986), J. Appl. Cryst. 19, 267-272 for
-    further information.
+    See Dollase (1986) for further information.
+
+    Reference: Dollase, W. A. (1986). J. Appl. Cryst. 19, 267-272.
 ;
     _name.category_id             CIF_PD_HEAD
     _name.object_id               PD_PREF_ORIENT_MARCH_DOLLASE
@@ -11468,8 +11474,9 @@ save_pd_pref_orient_march_dollase.r
     Omitting _pd_pref_orient_* implies that no preferred-orientation
     correction has been used.
 
-    See Dollase, W. A. (1986), J. Appl. Cryst. 19, 267-272 for
-    further information.
+    See Dollase (1986) for further information.
+
+    Reference: Dollase, W. A. (1986). J. Appl. Cryst. 19, 267-272.
 ;
     _name.category_id             pd_pref_orient_March_Dollase
     _name.object_id               r
@@ -11516,8 +11523,9 @@ save_PD_PREF_ORIENT_SPHERICAL_HARMONICS
     PD_PREF_ORIENT_MARCH_DOLLASE. For other methods,
     use _pd_pref_orient.special_details.
 
-    See Jarvinen, M. (1993), J. Appl. Cryst. 26, 525-531 for
-    further information.
+    See  Järvinen (1993) for further information.
+
+    Reference:  Järvinen , M. (1993). J. Appl. Cryst. 26, 525-531.
 ;
     _name.category_id             CIF_PD_HEAD
     _name.object_id               PD_PREF_ORIENT_SPHERICAL_HARMONICS
@@ -11603,8 +11611,8 @@ save_PD_PREF_ORIENT_SPHERICAL_HARMONICS
          _pd_phase.id of PHASE_A in the diffractogram DIFFPAT_A.
 
          There are four corrections applied, corresponding to
-         order/term pairs of (0,0), (2,0), (4,0), and (4, -3), and their
-         magnitudes and standard uncertainties are 1.0, 1.538(13), 0.913(16),
+         order/term pairs of (0,0), (2,0), (4,0) and (4, -3), and their
+         magnitudes and standard uncertainties are 1.0, 1.538(13), 0.913(16)
          and -0.166(10), respectively.
 
          The correction applied corresponds to the capillary geometry.
@@ -11750,8 +11758,9 @@ save_pd_pref_orient_spherical_harmonics.y_ij
     Omitting _pd_pref_orient_* implies that no preferred-
     orientation correction has been used.
 
-    See Jarvinen, M. (1993), J. Appl. Cryst. 26, 525-531 for
-    further information.
+    See  Järvinen (1993) for further information.
+
+    Reference:  Järvinen , M. (1993). J. Appl. Cryst. 26, 525-531.
 ;
     _name.category_id             pd_pref_orient_spherical_harmonics
     _name.object_id               y_ij
@@ -11853,7 +11862,7 @@ save_pd_prep.char_id
     _definition.update            2023-06-04
     _description.text
 ;
-    The identifier for the material from which this sample was prepared
+    The identifier for the material from which this sample was prepared.
 ;
     _name.category_id             pd_prep
     _name.object_id               char_id
@@ -11873,7 +11882,7 @@ save_pd_prep.conditions
     _description.text
 ;
     A description of how the sample was prepared
-    (reaction conditions etc.)
+    (reaction conditions etc.).
 ;
     _name.category_id             pd_prep
     _name.object_id               conditions
@@ -12274,8 +12283,8 @@ save_PD_PROC_LS
          _pd_proc_ls.prof_wR_factor     0.0569
          _pd_proc_ls.profile_function
        ;
-         The profiles were calculated using the modified Thompson-Cox-Hastings
-         formulation, where:
+         The profiles were calculated using the modified
+         Thompson-Cox-Hastings formulation, where:
 
            tch_L =  X * tan(\q) + Y / cos(\q)
            tch_G = (U * tan(\q)^2^ + V * tan(\q) + W + Z / cos(\q)^2^)^1/2^
@@ -12288,16 +12297,16 @@ save_PD_PROC_LS
            tch_Q = tch_L / tch_P
            eta = 1.36603 * tch_Q - 0.47719 * tch_Q^2^ + 0.1116 * tch_Q^3^
 
-         The full-width half-maximum of the Lorentzian and Gaussian peaks are
-         given by tch_L and tch_G, respectively.
+         The full-width half-maximum of the Lorentzian and Gaussian
+         peaks are given by tch_L and tch_G, respectively.
 
-         The mixing parameter between the amount of Lorentzian and Gaussian is
-         given by eta.
+         The mixing parameter between the amount of Lorentzian and
+         Gaussian is given by eta.
 
-         U, W, Y, and Z were fixed at zero.
+         U, W, Y and Z were fixed at zero.
 
-         The refined values of V and X were 0.059(2)\% and 0.037(1)\%,
-         respectively.
+         The refined values of V and X were 0.059(2)\% and
+         0.037(1)\%, respectively.
 
          For further details, see J. Appl. Cryst. (1987). 20, 79-83
          https://doi.org/10.1107/S0021889887087090
@@ -12451,10 +12460,8 @@ save_pd_proc_ls.prof_r_factor
       unweighted fitness metric for the agreement between the
       observed and computed diffraction patterns.
          R~p~ = sum~i~ | I~obs~(i) - I~calc~(i) |
-                / sum~i~ ( I~obs~(i) )
-      Note that in the above equations,
-         w(i) is the weight for the ith data point (see
-              _pd_proc.ls_weight).
+                / sum~i~ [ I~obs~(i) ].
+      In the above equation,
          I~obs~(i) is the observed intensity for the ith data
               point, sometimes referred to as y~i~(obs) or
               y~oi~. (See _pd_meas.counts_total,
@@ -12464,10 +12471,6 @@ save_pd_proc_ls.prof_r_factor
               applied to match the scale of the observed data set,
               sometimes referred to as y~i~(calc) or
               y~ci~. (See _pd_calc.intensity_total.)
-         n is the total number of data points (see
-              _pd_proc.number_of_points) less the number of
-              data points excluded from the refinement.
-         p is the total number of refined parameters.
 ;
     _name.category_id             pd_proc_ls
     _name.object_id               prof_R_factor
@@ -12489,26 +12492,21 @@ save_pd_proc_ls.prof_wr_expected
 ;
     _pd_proc_ls.prof_wR_expected, sometimes called the
       theoretical R~wp~ or R~exp~, is a weighted fitness metric for
-      the statistical precision of the data set. For an idealised fit,
+      the statistical precision of the data set. For an idealized fit,
       where all deviations between the observed intensities and
       those computed from the model are due to statistical
       fluctuations, the observed R~wp~ should match the expected
       R factor. In reality, R~wp~ will always be higher than
       R~exp~.
-        R~exp~ = SQRT { (n - p)  / sum~i~ ( w(i) [I~obs~(i)]^2^ ) }
+        R~exp~ = sqrt { (n - p)  / sum~i~ ( w(i) [I~obs~(i)]^2^ ) }
 
-      Note that in the above equations,
+      In the above equation,
          w(i) is the weight for the ith data point (see
               _pd_proc.ls_weight).
          I~obs~(i) is the observed intensity for the ith data
               point, sometimes referred to as y~i~(obs) or
               y~oi~. (See _pd_meas.counts_total,
               _pd_meas.intensity_total or _pd_proc.intensity_total.)
-         I~calc~(i) is the computed intensity for the ith data
-              point with background and other corrections
-              applied to match the scale of the observed data set,
-              sometimes referred to as y~i~(calc) or
-              y~ci~. (See _pd_calc.intensity_total.)
          n is the total number of data points (see
               _pd_proc.number_of_points) less the number of
               data points excluded from the refinement.
@@ -12535,12 +12533,12 @@ save_pd_proc_ls.prof_wr_factor
     _pd_proc_ls.prof_wR_factor, often called R~wp~, is a
       weighted fitness metric for the agreement between the
       observed and computed diffraction patterns.
-        R~wp~ = SQRT {
+        R~wp~ = sqrt {
                  sum~i~ ( w(i) [ I~obs~(i) - I~calc~(i) ]^2^ )
                  / sum~i~ ( w(i) [I~obs~(i)]^2^ )
                 }
 
-      Note that in the above equations,
+      In the above equation,
          w(i) is the weight for the ith data point (see
               _pd_proc.ls_weight).
          I~obs~(i) is the observed intensity for the ith data
@@ -12552,10 +12550,6 @@ save_pd_proc_ls.prof_wr_factor
               applied to match the scale of the observed data set,
               sometimes referred to as y~i~(calc) or
               y~ci~. (See _pd_calc.intensity_total.)
-         n is the total number of data points (see
-              _pd_proc.number_of_points) less the number of
-              data points excluded from the refinement.
-         p is the total number of refined parameters.
 ;
     _name.category_id             pd_proc_ls
     _name.object_id               prof_wR_factor
@@ -12632,12 +12626,12 @@ save_PD_PROC_OVERALL
       _description_example.case
       _description_example.detail
 ;
-          _pd_diffractogram.id   PATTERN_42
+          _pd_diffractogram.id        PATTERN_42
 
           _pd_proc.2theta_range_min   5.00
-          _pd_proc.2theta_range_max  95.00
+          _pd_proc.2theta_range_max   95.00
           _pd_proc.2theta_range_inc   0.02
-          _pd_proc.number_of_points  4501
+          _pd_proc.number_of_points   4501
 
           loop_
           _pd_data.point_id
@@ -12697,7 +12691,7 @@ save_pd_proc.2theta_range_inc
     _description.text
 ;
     The increment in 2θ diffraction angles in degrees for the
-    measurement of intensities. These may be used in place of the
+    measurement of intensities. This may be used in place of the
     _pd_proc.2theta_corrected values, or in the case of white-beam
     experiments it will define the fixed 2θ value.
 ;
@@ -12906,8 +12900,12 @@ save_PD_QPA_CALIB_FACTOR
     Further normalization may be necessary, and can be indicated.
 
     For a description of the quantification methodologies below, and a review on
-    quantitative phase analysis in general, see Chapter 3.9 of International
-    Tables Vol. H and references therein.
+    quantitative phase analysis in general, see Chapter 3.9 of
+    International Tables Vol. H and references therein.
+
+    Reference: International Tables for Crystallography (2019). Volume H,
+    Powder diffraction, edited by C. J. Gilmore, J. A. Kaduk and H. Schenk,
+    1st ed., Chapter 3.9. Chichester: John Wiley & Sons.
 ;
     _name.category_id             CIF_PD_HEAD
     _name.object_id               PD_QPA_CALIB_FACTOR
@@ -12951,8 +12949,8 @@ save_PD_QPA_CALIB_FACTOR
 ;
     _description_example.detail
 ;
-         A diffraction pattern containing three phases (PHASE_A, PHASE_B, and
-         PHASE_C) has been quantified using the I/Ic specialisation of the RIR
+         A diffraction pattern containing three phases (PHASE_A, PHASE_B and
+         PHASE_C) has been quantified using the I/Ic specialization of the RIR
          algorithm.
 
          The I/Ic value for each of the phases is specified by the values of
@@ -13359,8 +13357,8 @@ save_PD_QPA_EXTERNAL_STD
     quantitative phase analysis.
 
     Quantification by external standard is typically carried out
-    using the O'Connor & Raven algorithm in conjunction with whole-pattern
-    Rietveld modelling, and relies on the determination of
+    using the O'Connor & Raven (1988) algorithm in conjunction with
+    whole-pattern Rietveld modelling, and relies on the determination of
     the diffractometer constant, K. The use of an external standard
     allows for the calculation of absolute mass fractions, giving
     an indication of amorphous content. This method requires the
@@ -13368,9 +13366,13 @@ save_PD_QPA_EXTERNAL_STD
     calculated. For a review on quantitative phase analysis, see
     Chapter 3.9 of International Tables Vol. H and references therein.
 
-    Reference: International Tables for Crystallography (2019). Volume H,
-    Powder diffraction, edited by C. J. Gilmore, J. A. Kaduk and H. Schenk,
-    1st ed., Chapter 3.9. Chichester: John Wiley & Sons.
+    References:
+    O'Connor, B. H. & Raven, M. D. (1988). Application of the Rietveld
+      refinement procedure in assaying powdered mixtures.
+      Powder Diffr., 3(1), 2-6. DOI:10.1017/s0885715600013026.
+    International Tables for Crystallography (2019). Volume H,
+      Powder diffraction, edited by C. J. Gilmore, J. A. Kaduk and H. Schenk,
+      1st ed., Chapter 3.9. Chichester: John Wiley & Sons.
 ;
     _name.category_id             CIF_PD_HEAD
     _name.object_id               PD_QPA_EXTERNAL_STD
@@ -13390,7 +13392,7 @@ save_PD_QPA_EXTERNAL_STD
             _pd_spec.prep_id  REF_prep
 
             _pd_phase.id  NIST_ALUMINA_676A
-            _pd_phase_mass.absolute     99.02
+            _pd_phase_mass.absolute      99.02
             _pd_phase_mass.absolute_su   1.11
 
             _pd_qpa_external_std.k_factor           293.36
@@ -13434,7 +13436,7 @@ save_PD_QPA_EXTERNAL_STD
          here, identified with the diffractogram id of THE_REFERENCE.
 
          In the second block, a diffraction pattern is given, along with
-         information about the instrument, specimen used, and quantification
+         information about the instrument, specimen used and quantification
          method. These data are important to allow the K factor to be looked up
          and to allow the quantification through finding the mass absorption
          coefficient of the unknown specimen.
@@ -13495,7 +13497,7 @@ save_pd_qpa_external_std.k_factor
     The value of the diffractometer constant, K, applied to the
     quantification of the phases present in the given diffractogram.
 
-    The external standard method is described by O'Connor & Raven.
+    The external standard method is described by O'Connor & Raven (1988).
     In this method, the absolute mass percent of a phase is given as
 
     W~k~ = 100 * s~k~ * M~k~ * V~k~ * μ^*^ / K
@@ -13507,7 +13509,7 @@ save_pd_qpa_external_std.k_factor
 
     Reference: O'Connor, B. H. & Raven, M. D. (1988). Application of the
     Rietveld refinement procedure in assaying powdered mixtures.
-    Powder Diffraction, 3(1), 2-6. DOI:10.1017/s0885715600013026.
+    Powder Diffr., 3(1), 2-6. DOI:10.1017/s0885715600013026.
 ;
     _name.category_id             pd_qpa_external_std
     _name.object_id               k_factor
@@ -13605,20 +13607,20 @@ save_PD_QPA_INTENSITY_FACTOR
     _description_example.case
 ;
          data_phase_A
-             _pd_phase.id   PHASE_A
+             _pd_phase.id                     PHASE_A
              _pd_qpa_calib_factor.I_over_Ic   3.26
 
          data_phase_B
-             _pd_phase.id   PHASE_B
+             _pd_phase.id                     PHASE_B
              _pd_qpa_calib_factor.I_over_Ic   4.79
 
          data_phase_C
-             _pd_phase.id   PHASE_C
+             _pd_phase.id                     PHASE_C
              _pd_qpa_calib_factor.I_over_Ic   1.00
 
          data_diffractogram_block
-             _audit.schema          Custom
-             _pd_diffractogram.id   UNKNOWN_DIFFRACTOGRAM
+             _audit.schema                    Custom
+             _pd_diffractogram.id             UNKNOWN_DIFFRACTOGRAM
 
              loop_
              _pd_phase_mass.phase_id
@@ -13627,7 +13629,7 @@ save_PD_QPA_INTENSITY_FACTOR
              PHASE_B   17.90(15)
              PHASE_C   30.08(14)
 
-             _pd_qpa_overall.method   I/Ic
+             _pd_qpa_overall.method           I/Ic
 
              loop_
              _pd_qpa_intensity_factor.phase_id
@@ -13638,7 +13640,7 @@ save_PD_QPA_INTENSITY_FACTOR
 ;
     _description_example.detail
 ;
-         A diffraction pattern containing three phases (PHASE_A, PHASE_B, and
+         A diffraction pattern containing three phases (PHASE_A, PHASE_B and
          some PHASE_C) has been quantified using the I_over_Ic
          specialisation of the RIR algorithm.
 
@@ -13755,7 +13757,7 @@ save_PD_QPA_INTERNAL_STD
 
     Quantification by internal standard can be carried out by a variety
     of different methods, including the reference intensity ratio (RIR) or the
-    Hill & Howard algorithm in conjunction with whole-pattern Rietveld
+    Hill & Howard (1987) algorithm in conjunction with whole-pattern Rietveld
     modelling.
 
     In general, the use of an internal standard converts relative phase
@@ -13776,9 +13778,11 @@ save_PD_QPA_INTERNAL_STD
     For a review on quantitative phase analysis, see Chapter 3.9 of
     International Tables, Vol. H, and references therein.
 
-    Reference: International Tables for Crystallography (2019). Volume H,
-    Powder diffraction, edited by C. J. Gilmore, J. A. Kaduk and H. Schenk,
-    1st ed., Chapter 3.9. Chichester: John Wiley & Sons.
+    References:
+    Hill, R. J. and Howard, C. J. (1987). J. Appl. Cryst. 20, 467-474.
+    International Tables for Crystallography (2019). Volume H,
+      Powder diffraction, edited by C. J. Gilmore, J. A. Kaduk and H. Schenk,
+      1st ed., Chapter 3.9. Chichester: John Wiley & Sons.
 ;
     _name.category_id             CIF_PD_HEAD
     _name.object_id               PD_QPA_INTERNAL_STD
@@ -13814,7 +13818,7 @@ save_PD_QPA_INTERNAL_STD
 ;
     _description_example.detail
 ;
-         A diffraction pattern containing three phases (PHASE_1, PHASE_2, and
+         A diffraction pattern containing three phases (PHASE_1, PHASE_2 and
          some NIST SRM676a) has been quantified using the ZMV algorithm after
          Rietveld refinement.
 
@@ -13853,7 +13857,7 @@ save_pd_qpa_internal_std.crystallinity_percent
     Per cent crystallinity of the internal standard.
 
     Materials are rarely 100% crystalline as the crystal structure at the
-    material's surface is able to relax, and/or contain reaction products. This
+    material's surface is able to relax and/or contain reaction products. This
     thin, disordered surface layer can account for several mass percent of the
     standard, and, as such, can affect any resultant quantification based on the
     standard.
@@ -13862,7 +13866,9 @@ save_pd_qpa_internal_std.crystallinity_percent
     addition to be corrected to a crystalline addition, which is the addition
     being analysed in a diffraction experiment.
 
-    See discussion in Rowles (2024) Powder Diffr. 39(4), 224-226.
+    See discussion in Rowles (2024).
+
+    Reference: Rowles, M. R. (2024). Powder Diffr. 39(4), 224-226.
 ;
     _name.category_id             pd_qpa_internal_std
     _name.object_id               crystallinity_percent
@@ -13984,7 +13990,7 @@ save_pd_qpa_internal_std.special_details
     _description.text
 ;
     Description of internal standard details that cannot otherwise
-    be recorded using other PD_QPA_INTERNAL_STD data items
+    be recorded using other PD_QPA_INTERNAL_STD data items.
 ;
     _name.category_id             pd_qpa_internal_std
     _name.object_id               special_details
@@ -14009,11 +14015,11 @@ save_PD_QPA_OVERALL
     For a review on quantitative phase analysis, see Chapter 3.9 of
     International Tables Vol. H and references therein.
 
+    For usage examples, see the other PD_QPA_* categories.
+
     Reference: International Tables for Crystallography (2019). Volume H,
     Powder diffraction, edited by C. J. Gilmore, J. A. Kaduk and H. Schenk,
     1st ed., Chapter 3.9. Chichester: John Wiley & Sons.
-
-    For usage examples, see the other PD_QPA_* categories.
 ;
     _name.category_id             CIF_PD_HEAD
     _name.object_id               PD_QPA_OVERALL
@@ -14122,7 +14128,7 @@ save_pd_qpa_overall.method
          relative weight fractions can be converted to absolute weight fractions
          by
 
-            W~p~^absolute^ = W~p~^relative^ * (W~s~^known^ / W~s~^relative^)
+            W~p~^absolute^ = W~p~^relative^ * (W~s~^known^ / W~s~^relative^).
 
          Any difference between the sum of the individual phase weight
          percentages and 100 wt% can be attributed to unanalysed or amorphous
@@ -14130,7 +14136,7 @@ save_pd_qpa_overall.method
 
          [1] Toraya, H. (2016). J. Appl. Cryst. 49, 1508-1516.
          [2] Toraya, H. (2017). J. Appl. Cryst. 50, 820-829.
-         [3] Toraya, H. (2017). J. Appl. Cryst. 50, 665-665.
+         [3] Toraya, H. (2017). J. Appl. Cryst. 50, 665.
          [4] Toraya, H. (2018). J. Appl. Cryst. 51, 446-455.
          [5] Toraya, H. (2019). J. Appl. Cryst. 52, 520-531.
          [6] Toraya, H. & Omote, K. (2019). J. Appl. Cryst. 52, 13-22.
@@ -14200,7 +14206,7 @@ save_pd_qpa_overall.method
 
          The intensities of the peaks assigned to the PONKCS phase, when taken
          in combination with C~p~, act as pseudo-F_squared values. Because of
-         this, once a particular phase has been calibrated, it's value of C~p~
+         this, once a particular phase has been calibrated, its value of C~p~
          is consistent with ZMV values and can be used in conjunction with the
          ZMV algorithm with normal, crystalline phases to quantify relative
          phase fractions in mixtures containing this phase.
@@ -14217,13 +14223,14 @@ save_pd_qpa_overall.method
          relative weight fractions can be converted to absolute weight fractions
          by
 
-            W~p~^absolute^ = W~p~^relative^ * (W~s~^known^ / W~s~^relative^)
+            W~p~^absolute^ = W~p~^relative^ * (W~s~^known^ / W~s~^relative^).
 
          Any difference between the sum of the individual phase weight
          percentages and 100 wt% can be attributed to unanalysed or amorphous
          phases.
 
-         [1] Scarlett, N.V.Y. & Madsen, I.C. (2006). Powder Diffr. 21, 278-284.
+         [1] Scarlett, N. V. Y. & Madsen, I. C. (2006). Powder Diffr. 21,
+             278-284.
 ;
          RIR
 ;
@@ -14242,13 +14249,13 @@ save_pd_qpa_overall.method
              W~p~ = (I~p~ / C~p~) / Sum(I~k~ / C~k~, k=1:P)
 
          where I~p~=I~p~^'^/I~p,rel~, where I~p~^'^ is the intensity of the
-         analyte peak of phase p and I~P,rel~ is the intensity ratio between the
+         analyte peak of phase p and I~p,rel~ is the intensity ratio between the
          analyte peak and the most intense peak for phase p. The sum is taken
          over all phases present in the specimen. C~p~ is the reference
          intensity ratio for phase p, must be pre-calculated with a known,
          crystalline internal standard, as
 
-             C~p~ = (W~s~/W~p~) * (I~p~^'^/I~s~^'^) * (I~s,rel~/(I~p,rel~)
+             C~p~ = (W~s~/W~p~) * (I~p~^'^/I~s~^'^) * (I~s,rel~/I~p,rel~).
 
          The values utilized for I~p~ and C~p~ can be recorded using
          _pd_qpa_intensity_factor.value and _pd_qpa_calib_factor.RIR,
@@ -14258,7 +14265,7 @@ save_pd_qpa_overall.method
          relative weight fractions can be converted to absolute weight fractions
          by
 
-            W~p~^absolute^ = W~p~^relative^ * (W~s~^known^ / W~s~^relative^)
+            W~p~^absolute^ = W~p~^relative^ * (W~s~^known^ / W~s~^relative^).
 
          Any difference between the sum of the individual phase weight
          percentages and 100 wt% can be attributed to unanalysed or amorphous
@@ -14291,15 +14298,15 @@ save_pd_qpa_overall.method
          relative weight fractions can be converted to absolute weight fractions
          by
 
-            W~p~^absolute^ = W~p~^relative^ * (W~s~^known^ / W~s~^relative^)
+            W~p~^absolute^ = W~p~^relative^ * (W~s~^known^ / W~s~^relative^).
 
          Any difference between the sum of the individual phase weight
          percentages and 100 wt% can be attributed to unanalysed or amorphous
          phases.
 
-         [1] Hill,R.J. & Howard, C.J. (1987). J. Appl. Cryst. 20, 467-474.
-         [1] Bish,D.L. & Howard, S.A. (1988). J. Appl. Cryst. 21, 86-91.
-         [2] Rietveld, H. M. (1969). J. Appl. Cryst. 2, 65-71.
+         [1] Hill, R. J. & Howard, C. J. (1987). J. Appl. Cryst. 20, 467-474.
+         [2] Bish, D. L. & Howard, S. A. (1988). J. Appl. Cryst. 21, 86-91.
+         [3] Rietveld, H. M. (1969). J. Appl. Cryst. 2, 65-71.
 ;
          other
 ;
@@ -14481,7 +14488,7 @@ save_pd_spec.orientation
     and perpendicular to the plane containing the incident and
     scattered beams.
 
-    Thus for a horizontal orientation, scattering
+    Thus, for a horizontal orientation, scattering
     measurements are made in a plane perpendicular to the
     ground (the 2θ axis is parallel to the ground);
     for vertical orientation, scattering measurements are
@@ -14781,7 +14788,7 @@ save_refln.f_complex
     _description.text
 ;
     The structure-factor vector for the reflection calculated from
-    the atom-site data for the phase given by phase_id.
+    the atom-site data for the phase given by _pd_refln.phase_id.
 ;
     _name.category_id             refln
     _name.object_id               F_complex
