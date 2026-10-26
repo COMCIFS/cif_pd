@@ -15008,6 +15008,6 @@ save_
        Add DICTIONARY_AUTHOR loop.
 
        Changed canonical name of _pd_calib_d_to_tof.coeff to
-       _pd_calib_d_to_tof.coef and added latter as an alias;
+       _pd_calib_d_to_tof.coef and added former as an alias;
        likewise for *.coeff_su.
 ;
