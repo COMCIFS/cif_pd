@@ -15,7 +15,7 @@ data_CIF_PD
     _dictionary.title             CIF_PD
     _dictionary.class             Instance
     _dictionary.version           2.5.0
-    _dictionary.date              2026-10-20
+    _dictionary.date              2026-10-26
     _dictionary.uri
 https://raw.githubusercontent.com/COMCIFS/cif_pd/master/cif_pd.dic
     _dictionary.ddl_conformance   4.2.0
@@ -2516,7 +2516,7 @@ save_PD_CALIB_D_TO_TOF
          loop_
          _pd_calib_d_to_tof.id
          _pd_calib_d_to_tof.power
-         _pd_calib_d_to_tof.coeff
+         _pd_calib_d_to_tof.coef
          0    0  -2.062
          DIFC 1  746.8
          t2   2  0.08099
@@ -2533,8 +2533,8 @@ save_PD_CALIB_D_TO_TOF
          loop_
          _pd_calib_d_to_tof.id
          _pd_calib_d_to_tof.power
-         _pd_calib_d_to_tof.coeff
-         _pd_calib_d_to_tof.coeff_su
+         _pd_calib_d_to_tof.coef
+         _pd_calib_d_to_tof.coef_su
          0     0   -2.062    2.09
          DIFC  1   746.8     1.14
          t2    2   0.08099   0.102
@@ -2550,17 +2550,18 @@ save_PD_CALIB_D_TO_TOF
 
 save_
 
-save_pd_calib_d_to_tof.coeff
+save_pd_calib_d_to_tof.coef
 
-    _definition.id                '_pd_calib_d_to_tof.coeff'
-    _definition.update            2025-08-01
+    _definition.id                '_pd_calib_d_to_tof.coef'
+    _alias.definition_id          '_pd_calib_d_to_tof.coeff'
+    _definition.update            2026-10-26
     _description.text
 ;
     The value of the coefficient used in the equation to convert
     d-spacing into time-of-flight.
 ;
     _name.category_id             pd_calib_d_to_tof
-    _name.object_id               coeff
+    _name.object_id               coef
     _type.purpose                 Measurand
     _type.source                  Derived
     _type.container               Single
@@ -2589,17 +2590,18 @@ save_pd_calib_d_to_tof.coeff
 
 save_
 
-save_pd_calib_d_to_tof.coeff_su
+save_pd_calib_d_to_tof.coef_su
 
-    _definition.id                '_pd_calib_d_to_tof.coeff_su'
-    _definition.update            2025-08-01
+    _definition.id                '_pd_calib_d_to_tof.coef_su'
+    _alias.definition_id          '_pd_calib_d_to_tof.coeff_su'
+    _definition.update            2026-10-26
     _description.text
 ;
-    Standard uncertainty of _pd_calib_d_to_tof.coeff.
+    Standard uncertainty of _pd_calib_d_to_tof.coef.
 ;
     _name.category_id             pd_calib_d_to_tof
     _name.object_id               coeff_su
-    _name.linked_item_id          '_pd_calib_d_to_tof.coeff'
+    _name.linked_item_id          '_pd_calib_d_to_tof.coef'
     _type.purpose                 SU
     _type.source                  Related
     _type.container               Single
@@ -14944,7 +14946,7 @@ save_
 
        Deprecated _pd_refln.wavelength_id after consultation with PDDMG.
 ;
-         2.5.0                    2026-10-20
+         2.5.0                    2026-10-26
 ;
        New categories together with linked identifiers and examples:
        PD_DIFFRACTOGRAM, PD_CALC_COMPONENT, PD_PREF_ORIENT_MARCH_DOLLASE,
@@ -15004,4 +15006,8 @@ save_
        Set DDL conformance to version 4.2.0.
 
        Add DICTIONARY_AUTHOR loop.
+
+       Changed canonical name of _pd_calib_d_to_tof.coeff to
+       _pd_calib_d_to_tof.coef and added latter as an alias;
+       likewise for *.coeff_su.
 ;
