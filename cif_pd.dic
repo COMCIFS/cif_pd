@@ -1000,7 +1000,7 @@ save_pd_background.cosine_fourier_series_coef
 
     where x is the 2θ value for that particular step, or some other
     X coordinate normalized to the range 0:180 degrees, j is the order
-    of the coefficient, and N represent the upper limit on the number of
+    of the coefficient, and N represents the upper limit on the number of
     coefficients used.
 ;
     _name.category_id             pd_background
@@ -1093,7 +1093,7 @@ save_pd_background.cosine_fourier_series_order
 
     where x is the 2θ value for that particular step, or some other
     X coordinate normalized to the range 0:180 degrees, j is the order
-    of the coefficient, and N represent the upper limit on the number of
+    of the coefficient, and N represents the upper limit on the number of
     coefficients used.
 ;
     _name.category_id             pd_background
@@ -1643,9 +1643,9 @@ save_pd_background.polynomial_powers
 
     See _pd_background.polynomial_power.
 
-    Must be in the same order as the powers in _pd_background.polynomial_coefs.
-    Values at the same index in each list are corresponding coefficient-power
-    pairs.
+    Must be in the same order as the coefficients in
+    _pd_background.polynomial_coefs. Values at the same index in each list are
+    corresponding coefficient-power pairs.
 ;
     _name.category_id             pd_background
     _name.object_id               polynomial_powers
@@ -2097,7 +2097,7 @@ save_pd_calc_component.intensity_total
     or _pd_meas.intensity_*).
 
     In order to properly associate data between loops,
-    _pd_calc_component.intensity_net must be looped with
+    _pd_calc_component.intensity_total must be looped with
     _pd_calc_component.point_id, and the
     measured/processed/calculated data must be looped with
     _pd_data.point_id.
@@ -5144,7 +5144,7 @@ save_PD_CALC
 
          The category key value associated with _pd_data.point_id is given
          with every data point. The X-coordinate associated with each point
-         would be given in the appropratiate _pd_meas.* or _pd_proc.* loop.
+         would be given in the appropriate _pd_meas.* or _pd_proc.* loop.
          Calculated data are normally presented with measured and processed
          data in a single loop.
 
