@@ -46,8 +46,8 @@ save_CIF_PD_HEAD
     _import.get
         [
           {
-           'dupl':Ignore  'file':cif_core_multiblock.dic  'mode':Full
-           'save':CIF_CORE_MULTIBLOCK_HEAD
+           'dupl':Ignore  'file':https://doi.org/10.1107/cifdic_multiblock_1.1.0
+           'mode':Full  'save':CIF_CORE_MULTIBLOCK_HEAD
           }
           {
            'dupl':Ignore  'file':cif_img.dic  'mode':Full  'save':CIF_IMG_HEAD
@@ -657,7 +657,8 @@ save_pd_background.air_or_thermal_diffuse_coef_1_su
     _name.linked_item_id          '_pd_background.air_or_thermal_diffuse_coef_1'
     _units.code                   none
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -712,7 +713,8 @@ save_pd_background.air_or_thermal_diffuse_coef_2_su
     _name.linked_item_id          '_pd_background.air_or_thermal_diffuse_coef_2'
     _units.code                   none
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -899,7 +901,8 @@ save_pd_background.chebyshev_coef_su
     _name.linked_item_id          '_pd_background.Chebyshev_coef'
     _units.code                   none
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -1026,7 +1029,8 @@ save_pd_background.cosine_fourier_series_coef_su
     _name.linked_item_id          '_pd_background.cosine_Fourier_series_coef'
     _units.code                   none
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -1154,7 +1158,8 @@ save_pd_background.debye_diffuse_amp_su
     _name.linked_item_id          '_pd_background.Debye_diffuse_amp'
     _units.code                   none
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -1205,7 +1210,8 @@ save_pd_background.debye_diffuse_displace_su
     _name.linked_item_id          '_pd_background.Debye_diffuse_displace'
     _units.code                   angstrom_squared
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -1256,7 +1262,8 @@ save_pd_background.debye_diffuse_dist_su
     _name.linked_item_id          '_pd_background.Debye_diffuse_dist'
     _units.code                   angstroms
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -1389,7 +1396,8 @@ save_pd_background.line_segment_intensity_su
     _name.linked_item_id          '_pd_background.line_segment_intensity'
     _units.code                   none
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -1538,7 +1546,8 @@ save_pd_background.polynomial_coef_su
     _name.linked_item_id          '_pd_background.polynomial_coef'
     _units.code                   arbitrary
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -1628,7 +1637,8 @@ save_pd_background.polynomial_power_su
     _name.linked_item_id          '_pd_background.polynomial_power'
     _units.code                   none
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -2392,7 +2402,8 @@ save_pd_calib.detector_response_su
     _name.linked_item_id          '_pd_calib.detector_response'
     _units.code                   none
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -2443,7 +2454,8 @@ save_pd_calib.std_internal_mass_percent_su
     _name.linked_item_id          '_pd_calib.std_internal_mass_percent'
     _units.code                   none
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -2846,7 +2858,8 @@ save_pd_calib_detected_intensity.detector_response_su
         '_pd_calib_detected_intensity.detector_response'
     _units.code                   none
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -3079,7 +3092,8 @@ save_pd_calib_incident_intensity.incident_intensity_su
         '_pd_calib_incident_intensity.incident_intensity'
     _units.code                   hertz
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -3320,7 +3334,8 @@ save_pd_calib.2theta_offset_su
     _name.linked_item_id          '_pd_calib.2theta_offset'
     _units.code                   degrees
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -3772,7 +3787,8 @@ save_pd_calib_xcoord.actual_2theta_su
     _name.linked_item_id          '_pd_calib_xcoord.actual_2theta'
     _units.code                   degrees
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -3812,7 +3828,8 @@ save_pd_calib_xcoord.actual_d_spacing_su
     _name.linked_item_id          '_pd_calib_xcoord.actual_d_spacing'
     _units.code                   angstroms
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -3854,7 +3871,8 @@ save_pd_calib_xcoord.actual_energy_detection_su
     _name.linked_item_id          '_pd_calib_xcoord.actual_energy_detection'
     _units.code                   electron_volts
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -3896,7 +3914,8 @@ save_pd_calib_xcoord.actual_energy_incident_su
     _name.linked_item_id          '_pd_calib_xcoord.actual_energy_incident'
     _units.code                   electron_volts
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -3935,7 +3954,8 @@ save_pd_calib_xcoord.actual_position_su
     _name.linked_item_id          '_pd_calib_xcoord.actual_position'
     _units.code                   millimetres
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -3975,7 +3995,8 @@ save_pd_calib_xcoord.actual_recip_len_q_su
     _name.linked_item_id          '_pd_calib_xcoord.actual_recip_len_q'
     _units.code                   reciprocal_angstroms
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -4015,7 +4036,8 @@ save_pd_calib_xcoord.actual_time_of_flight_su
     _name.linked_item_id          '_pd_calib_xcoord.actual_time_of_flight'
     _units.code                   microseconds
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -4057,7 +4079,8 @@ save_pd_calib_xcoord.actual_wavelength_su
     _name.linked_item_id          '_pd_calib_xcoord.actual_wavelength'
     _units.code                   angstroms
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -4672,7 +4695,8 @@ save_pd_char.atten_coef_mu_calc_su
     _name.linked_item_id          '_pd_char.atten_coef_mu_calc'
     _units.code                   reciprocal_millimetres
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -4712,7 +4736,8 @@ save_pd_char.atten_coef_mu_obs_su
     _name.linked_item_id          '_pd_char.atten_coef_mu_obs'
     _units.code                   reciprocal_millimetres
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -4817,7 +4842,8 @@ save_pd_char.mass_atten_coef_mu_calc_su
     _name.linked_item_id          '_pd_char.mass_atten_coef_mu_calc'
     _units.code                   millimetres_squared_per_gram
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -4856,7 +4882,8 @@ save_pd_char.mass_atten_coef_mu_meas_su
     _name.linked_item_id          '_pd_char.mass_atten_coef_mu_meas'
     _units.code                   millimetres_squared_per_gram
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -5618,7 +5645,8 @@ save_pd_meas.2theta_scan_su
     _name.linked_item_id          '_pd_meas.2theta_scan'
     _units.code                   degrees
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -5906,7 +5934,8 @@ save_pd_meas.intensity_background_su
     _name.linked_item_id          '_pd_meas.intensity_background'
     _units.code                   none
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -5965,7 +5994,8 @@ save_pd_meas.intensity_container_su
     _name.linked_item_id          '_pd_meas.intensity_container'
     _units.code                   none
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -6025,7 +6055,8 @@ save_pd_meas.intensity_monitor_su
     _name.linked_item_id          '_pd_meas.intensity_monitor'
     _units.code                   none
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -6082,7 +6113,8 @@ save_pd_meas.intensity_total_su
     _name.linked_item_id          '_pd_meas.intensity_total'
     _units.code                   none
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -6161,7 +6193,8 @@ save_pd_meas.position_su
     _name.linked_item_id          '_pd_meas.position'
     _units.code                   millimetres
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -6202,7 +6235,8 @@ save_pd_meas.step_count_time_su
     _name.linked_item_id          '_pd_meas.step_count_time'
     _units.code                   seconds
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -6241,7 +6275,8 @@ save_pd_meas.time_of_flight_su
     _name.linked_item_id          '_pd_meas.time_of_flight'
     _units.code                   microseconds
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -6342,7 +6377,8 @@ save_pd_proc.2theta_corrected_su
     _name.linked_item_id          '_pd_proc.2theta_corrected'
     _units.code                   degrees
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -6380,7 +6416,8 @@ save_pd_proc.d_spacing_su
     _name.linked_item_id          '_pd_proc.d_spacing'
     _units.code                   angstroms
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -6436,7 +6473,8 @@ save_pd_proc.d_spacing_perpendicular_su
     _name.linked_item_id          '_pd_proc.d_spacing_perpendicular'
     _units.code                   angstroms
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -6497,7 +6535,8 @@ save_pd_proc.energy_detection_su
     _name.linked_item_id          '_pd_proc.energy_detection'
     _units.code                   electron_volts
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -6536,7 +6575,8 @@ save_pd_proc.energy_incident_su
     _name.linked_item_id          '_pd_proc.energy_incident'
     _units.code                   electron_volts
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -6581,7 +6621,8 @@ save_pd_proc.intensity_bkg_calc_su
     _name.linked_item_id          '_pd_proc.intensity_bkg_calc'
     _units.code                   none
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -6639,7 +6680,8 @@ save_pd_proc.intensity_bkg_fix_su
     _name.linked_item_id          '_pd_proc.intensity_bkg_fix'
     _units.code                   none
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -6689,7 +6731,8 @@ save_pd_proc.intensity_incident_su
     _name.linked_item_id          '_pd_proc.intensity_incident'
     _units.code                   none
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -6732,7 +6775,8 @@ save_pd_proc.intensity_net_su
     _name.linked_item_id          '_pd_proc.intensity_net'
     _units.code                   none
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -6789,7 +6833,8 @@ save_pd_proc.intensity_norm_su
     _name.linked_item_id          '_pd_proc.intensity_norm'
     _units.code                   none
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -6831,7 +6876,8 @@ save_pd_proc.intensity_total_su
     _name.linked_item_id          '_pd_proc.intensity_total'
     _units.code                   none
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -6923,7 +6969,8 @@ save_pd_proc.recip_len_q_su
     _name.linked_item_id          '_pd_proc.recip_len_Q'
     _units.code                   reciprocal_angstroms
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -6970,7 +7017,8 @@ save_pd_proc.wavelength_su
     _name.linked_item_id          '_pd_proc.wavelength'
     _units.code                   angstroms
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -9420,7 +9468,8 @@ save_pd_meas.2theta_fixed_su
     _name.linked_item_id          '_pd_meas.2theta_fixed'
     _units.code                   degrees
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -9532,7 +9581,8 @@ save_pd_meas.angle_chi_su
     _name.linked_item_id          '_pd_meas.angle_chi'
     _units.code                   degrees
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -9575,7 +9625,8 @@ save_pd_meas.angle_omega_su
     _name.linked_item_id          '_pd_meas.angle_omega'
     _units.code                   degrees
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -9618,7 +9669,8 @@ save_pd_meas.angle_phi_su
     _name.linked_item_id          '_pd_meas.angle_phi'
     _units.code                   degrees
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -9711,7 +9763,8 @@ save_pd_meas.rocking_angle_su
     _name.linked_item_id          '_pd_meas.rocking_angle'
     _units.code                   degrees
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -9876,7 +9929,8 @@ save_pd_meas_overall.step_count_time_su
     _name.linked_item_id          '_pd_meas_overall.step_count_time'
     _units.code                   seconds
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -10007,7 +10061,8 @@ save_pd_peak.2theta_centroid_su
     _name.linked_item_id          '_pd_peak.2theta_centroid'
     _units.code                   degrees
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -10044,7 +10099,8 @@ save_pd_peak.2theta_maximum_su
     _name.linked_item_id          '_pd_peak.2theta_maximum'
     _units.code                   degrees
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -10081,7 +10137,8 @@ save_pd_peak.d_spacing_su
     _name.linked_item_id          '_pd_peak.d_spacing'
     _units.code                   angstroms
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -10164,7 +10221,8 @@ save_pd_peak.intensity_su
     _name.linked_item_id          '_pd_peak.intensity'
     _units.code                   none
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -10223,7 +10281,8 @@ save_pd_peak.pk_height_su
     _name.linked_item_id          '_pd_peak.pk_height'
     _units.code                   none
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -10288,7 +10347,8 @@ save_pd_peak.width_2theta_su
     _name.linked_item_id          '_pd_peak.width_2theta'
     _units.code                   degrees
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -10326,7 +10386,8 @@ save_pd_peak.width_d_spacing_su
     _name.linked_item_id          '_pd_peak.width_d_spacing'
     _units.code                   angstroms
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -10468,7 +10529,8 @@ save_pd_phase.atten_coef_mu_calc_su
     _name.linked_item_id          '_pd_phase.atten_coef_mu_calc'
     _units.code                   reciprocal_millimetres
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -10509,7 +10571,8 @@ save_pd_phase.density_diffrn_su
     _name.linked_item_id          '_pd_phase.density_diffrn'
     _units.code                   megagrams_per_metre_cubed
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -10573,7 +10636,8 @@ save_pd_phase.mass_atten_coef_mu_calc_su
     _name.linked_item_id          '_pd_phase.mass_atten_coef_mu_calc'
     _units.code                   millimetres_squared_per_gram
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -10838,7 +10902,8 @@ save_pd_phase_mass.absolute_su
     _name.linked_item_id          '_pd_phase_mass.absolute'
     _units.code                   none
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -10914,7 +10979,8 @@ save_pd_phase_mass.original_su
     _name.linked_item_id          '_pd_phase_mass.original'
     _units.code                   none
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -10959,7 +11025,8 @@ save_pd_phase_mass.percent_su
     _name.linked_item_id          '_pd_phase_mass.percent'
     _units.code                   none
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -11177,7 +11244,8 @@ save_pd_pref_orient.spherical_harmonics_texture_index_su
         '_pd_pref_orient.spherical_harmonics_texture_index'
     _units.code                   none
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -11329,7 +11397,8 @@ save_pd_pref_orient_march_dollase.fract_su
     _name.linked_item_id          '_pd_pref_orient_March_Dollase.fract'
     _units.code                   none
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -11507,7 +11576,8 @@ save_pd_pref_orient_march_dollase.r_su
     _name.linked_item_id          '_pd_pref_orient_March_Dollase.r'
     _units.code                   none
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -11659,7 +11729,8 @@ save_pd_pref_orient_spherical_harmonics.c_ij_su
     _name.linked_item_id          '_pd_pref_orient_spherical_harmonics.c_ij'
     _units.code                   none
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -11934,7 +12005,8 @@ save_pd_prep.cool_rate_su
     _name.linked_item_id          '_pd_prep.cool_rate'
     _units.code                   kelvins_per_minute
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -11990,7 +12062,8 @@ save_pd_prep.pressure_su
     _name.linked_item_id          '_pd_prep.pressure'
     _units.code                   kilopascals
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -12047,7 +12120,8 @@ save_pd_prep.temperature_su
     _name.linked_item_id          '_pd_prep.temperature'
     _units.code                   kelvins
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -13010,7 +13084,8 @@ save_pd_qpa_calib_factor.absorption_diffraction_su
     _name.linked_item_id          '_pd_qpa_calib_factor.absorption_diffraction'
     _units.code                   none
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -13049,7 +13124,8 @@ save_pd_qpa_calib_factor.ddm_su
     _name.linked_item_id          '_pd_qpa_calib_factor.DDM'
     _units.code                   none
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -13091,7 +13167,8 @@ save_pd_qpa_calib_factor.external_standard_su
     _name.linked_item_id          '_pd_qpa_calib_factor.external_standard'
     _units.code                   none
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -13133,7 +13210,8 @@ save_pd_qpa_calib_factor.i_over_ic_su
     _name.linked_item_id          '_pd_qpa_calib_factor.I_over_Ic'
     _units.code                   none
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -13179,7 +13257,8 @@ save_pd_qpa_calib_factor.other_su
     _name.linked_item_id          '_pd_qpa_calib_factor.other'
     _units.code                   none
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -13240,7 +13319,8 @@ save_pd_qpa_calib_factor.ponkcs_su
     _name.linked_item_id          '_pd_qpa_calib_factor.PONKCS'
     _units.code                   none
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -13285,7 +13365,8 @@ save_pd_qpa_calib_factor.rir_su
     _name.linked_item_id          '_pd_qpa_calib_factor.RIR'
     _units.code                   none
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -13346,7 +13427,8 @@ save_pd_qpa_calib_factor.zmv_su
     _name.linked_item_id          '_pd_qpa_calib_factor.ZMV'
     _units.code                   none
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -13539,7 +13621,8 @@ save_pd_qpa_external_std.k_factor_su
     _name.linked_item_id          '_pd_qpa_external_std.k_factor'
     _units.code                   none
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -13745,7 +13828,8 @@ save_pd_qpa_intensity_factor.value_su
     _name.linked_item_id          '_pd_qpa_intensity_factor.value'
     _units.code                   none
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -13901,7 +13985,8 @@ save_pd_qpa_internal_std.crystallinity_percent_su
     _name.linked_item_id          '_pd_qpa_internal_std.crystallinity_percent'
     _units.code                   none
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
@@ -13966,7 +14051,8 @@ save_pd_qpa_internal_std.mass_percent_su
     _name.linked_item_id          '_pd_qpa_internal_std.mass_percent'
     _units.code                   none
 
-    _import.get                   [{'file':templ_attr.cif  'save':general_su}]
+    _import.get
+        [{'file':https://doi.org/10.1107/cifdic_attr_2.0.0  'save':general_su}]
 
 save_
 
