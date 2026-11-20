@@ -14,13 +14,13 @@ data_CIF_PD
 
     _dictionary.title             CIF_PD
     _dictionary.class             Instance
-    _dictionary.version           2.5.0
-    _dictionary.date              2026-10-26
-    _dictionary.uri               https://doi.org/10.1107/cifdic_pd_2.5.0
+    _dictionary.version           2.5.1
+    _dictionary.date              2026-11-20
+    _dictionary.uri               https://doi.org/10.1107/cifdic_pd_2.5.1
     _dictionary.ddl_conformance   4.2.0
     _dictionary.licensing_SPDX    CC-BY-4.0
     _dictionary.namespace         CifCore
-    _dictionary.doi               10.1107/cifdic_pd_2.5.0
+    _dictionary.doi               10.1107/cifdic_pd_2.5.1
     _description.text
 ;
     The CIF_PD dictionary records the definitions of data items needed in
@@ -14981,11 +14981,9 @@ save_
       _dictionary_author.id_orcid
       _dictionary_author.email
          1         'Toby, Brian'                .                           .
-         2         'Hall, Sydney R.'            .                           .
-         3         'Brown, I. David.'           .                           .
-         4         'Hester, James R.'           0000-0002-2004-8672         .
-         5         'Vaitkus, Antanas'           0000-0002-5944-1391         .
-         6         'Rowles, Matthew R.'         0000-0002-7448-6774         .
+         2         'Hester, James R.'           0000-0002-2004-8672         .
+         3         'Vaitkus, Antanas'           0000-0002-5944-1391         .
+         4         'Rowles, Matthew R.'         0000-0002-7448-6774         .
 
     loop_
       _dictionary_audit.version
@@ -15100,4 +15098,8 @@ save_
        Changed canonical name of _pd_calib_d_to_tof.coeff to
        _pd_calib_d_to_tof.coef and added former as an alias;
        likewise for *.coeff_su.
+;
+         2.5.1                    2026-11-20
+;
+       Removed incorrectly added authors.
 ;
